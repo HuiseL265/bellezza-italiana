@@ -105,3 +105,96 @@ body{
     cursor: pointer;
     color:#E58169;
 }
+
+
+
+#central{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    
+}
+
+#info{
+    width: 600px;
+    height: 700px;
+
+}
+#registrar{
+    width: 600px;
+    height: 700px;
+    margin-right: 200px;
+
+}
+
+
+
+
+
+/* CODIGO DO ALANZINHO */
+
+.items{
+    margin:auto;
+    width:450px;
+    min-height:340px;
+    border-radius:10px;
+    background-color:#b4df91;	
+}
+    .items table{
+        margin:0;
+    }
+
+tr td:first-child{
+    font-size:20px;
+    text-align:left;
+    font-weight: bold;
+}
+
+input{
+    border-color:#808080;
+    border-radius:5px;
+    height:30px;
+    line-height:1.5;
+    text-align:left;
+    font-size: 16px;
+}
+
+a{
+    float:left;
+    color: #808080;
+    font-weight: bold;
+    text-decoration:none;
+    margin:auto;
+
+}
+    a:hover{
+        text-decoration: underline;
+    }
+
+#confirm{
+    color:black;
+    background: #b4df91;
+
+    width: 100px;
+    height: 30px;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+    
+    display:flex;   
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:0px 8px 16px rgba(6, 141, 58, 0.16);
+
+    margin:0;
+}
+
+    #confirm:hover{
+        background-color: #E58169;
+        text-decoration:none;
+        cursor: pointer;
+   
+	}
