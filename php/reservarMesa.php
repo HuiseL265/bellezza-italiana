@@ -6,12 +6,6 @@
     <title>Document</title>
     <script src="./libs/jquery-3.4.1.js"></script>
     <script>
-        $(document).ready(function (){
-            function IndisponibilidadeAviso(){
-                HTMLDocument('../agendar.php');
-                alert("Indisponibilidade para uso deste acento")
-            }
-        });
     </script>
 </head>
 <body>
@@ -21,17 +15,12 @@
 
 <?php
 require('connect.php');
-$teste =1;
+$teste = 1;
 
 $mesas = mysqli_query($con,"SELECT * FROM `tb_mesas`");
 
 while($mesaAtual = mysqli_fetch_array($mesas)){
-    //$mesaAtual['reservado']
-    if($teste == 1){
-        IndisponibilidadeAviso();
-    }else{
-
-    }
+    echo ""    
 }
 
 
