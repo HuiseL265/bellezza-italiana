@@ -16,7 +16,7 @@ echo "Dados preenchidos ". $p;
 
 //verifica se o número de campos está preenchido corretamente, caso seja menor que o TOTAL
 //de campos preenchidos, ele verifica se é o campo opcional 'telefone2'
-if(($p >= 10 and $_POST['telefone2'] == "") or $p == 11){
+if(($p >= 6 and $_POST['telefone2'] == "") or $p == 7){
     //senha e confirmar senha são idênticas?
     if($senha === $senha2){
         $senha = md5($senha);
@@ -28,6 +28,7 @@ if(($p >= 10 and $_POST['telefone2'] == "") or $p == 11){
             }
     }else{
         echo "<br>Senhas não correspondem.";
+        header("location:../home?$erro=senha");
     }
 }else{
     echo "<br>Número de campos obrigatórios não preenchidos";
