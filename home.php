@@ -17,12 +17,14 @@ session_start();
           <ul id="header-container">
              <li><a href=""><h1>Home</h1></a></li>
              <li><a href=""><h1>Sobre</h1></a></li>
-             <li><a href=""><h1>Contato</h1></a></li>
+             <li><a href=""><h1>Cardápio</h1></a></li>
+             <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
+             
              <form id="form-login" method="post" action="php/logar.act.php">
                <input type="email" name="email" placeholder="Login">
                <input type="password" name="senha" placeholder="Senha">
                <input type="submit" value="LOGAR">
-               
+               </ul>
 
                <?php
                 if(isset($_SESSION['usuario_invalido'])){
@@ -43,7 +45,6 @@ session_start();
                     unset($_SESSION['campo_vazio']);
                ?>
              </form>
-          </ul>
       </header>
       <div id="central">
          <div id="info">

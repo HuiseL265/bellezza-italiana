@@ -25,14 +25,5 @@ session_start();
              </form>
           </ul>
       </header>
-      <div id="central">
-         <div id="registrar">
-            <form action="php/incluir.act.php" method="post">
-               <div class="items">
-               
-               </div>
-           </form>
-         </div>
-      </div>
    </body>
 </html>
