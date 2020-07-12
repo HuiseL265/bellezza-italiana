@@ -21,8 +21,8 @@ if(($p >= 10 and $_POST['telefone2'] == "") or $p == 11){
     if($senha === $senha2){
         $senha = md5($senha);
             if(mysqli_query($con,
-                "INSERT INTO `tb_restaurante`(`codRes`, `nome`, `email`, `cep`, `rua`, `num`, `cpfResponsavel`, `cnpj`, `telefone`, `telefone2`, `senha`)
-                 VALUES (NULL, '$nome', '$email', '$cep', '$rua', '$num', '$cpf', '$cnpj', '$telefone', '$telefone2', '$senha');")){
+                "INSERT INTO `tb_clientes`(`cod`, `nome`, `email`,`cpf`, `telefone`, `telefone2`, `senha`)
+                 VALUES (NULL, '$nome', '$email','$cpf', '$telefone', '$telefone2', '$senha');")){
                     echo "<br>Cadastro Realizado!";
                     header("location:../home");
             }

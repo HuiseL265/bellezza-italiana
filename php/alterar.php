@@ -8,8 +8,8 @@
 <?php
 require('connect.php');
 $cod = $_GET['cod'];
-$restaurantesAlt = mysqli_query($con, "SELECT * FROM `tb_restaurante` WHERE `codRes` = '$cod'");
-$resAlt = mysqli_fetch_array($restaurantesAlt);
+$usuariosAlt = mysqli_query($con, "SELECT * FROM `tb_clientes` WHERE `cod` = '$cod'");
+$clienteAlt = mysqli_fetch_array($usuariosAlt);
 ?>
 
 <style>
@@ -93,45 +93,29 @@ a{
             <tr>
                 <td>Código</td>
                 <td style="text-align: center;">
-                    <input type="text" name="cod" value="<?php echo $resAlt['codRes']?>" hidden="hidden" >
-                    <?php echo $resAlt['codRes']?>
+                    <input type="text" name="cod" value="<?php echo $clienteAlt['codRes']?>" hidden="hidden" >
+                    <?php echo $clienteAlt['codRes']?>
                 </td>
             </tr>
             <tr>
                 <td>Nome</td>
-                <td><input type="text" name="nome" value="<?php echo $resAlt['nome']?>"></td>
+                <td><input type="text" name="nome" value="<?php echo $clienteAlt['nome']?>"></td>
             </tr>
             <tr>
                 <td>Email</td>
-                <td><input type="text" name="email" value="<?php echo $resAlt['email']?>"></td>
-            </tr>
-            <tr>
-                <td>CEP</td>
-                <td><input type="text" maxlength="8" name="cep" value="<?php echo $resAlt['cep']?>"></td>
-            </tr>
-            <tr>
-                <td>Rua</td>
-                <td><input type="text" name="rua" value="<?php echo $resAlt['rua']?>"></td>
-            </tr>
-            <tr>
-                <td>Num</td>
-                <td><input type="text" maxlength="10" name="num" value="<?php echo $resAlt['num']?>"></td>
+                <td><input type="text" name="email" value="<?php echo $clienteAlt['email']?>"></td>
             </tr>
             <tr>
                 <td>CPF</td>
-                <td><input type="text" maxlength="9" name="cpfResponsavel" value="<?php echo $resAlt['cpfResponsavel']?>"></td>
-            </tr>
-            <tr>
-                <td>CNPJ</td>
-                <td><input type="text" maxlength="14" name="cnpj" value="<?php echo $resAlt['cnpj']?>"></td>
+                <td><input type="text" maxlength="9" name="cpfResponsavel" value="<?php echo $clienteAlt['cpfResponsavel']?>"></td>
             </tr>
             <tr>
                 <td>Telefone</td>
-                <td><input type="text" maxlength="11" name="telefone" value="<?php echo $resAlt['telefone']?>"></td>
+                <td><input type="text" maxlength="11" name="telefone" value="<?php echo $clienteAlt['telefone']?>"></td>
             </tr>
             <tr>
                 <td>Telefone(2)</td>
-                <td><input type="text" maxlength="11" name="telefone2" value="<?php echo $resAlt['telefone2']?>"></td>
+                <td><input type="text" maxlength="11" name="telefone2" value="<?php echo $clienteAlt['telefone2']?>"></td>
             </tr>
             <tr>
                 <td colspan="2">

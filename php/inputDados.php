@@ -12,7 +12,6 @@
         Rua: <input type="text" name="rua"> 
         Nº: <input type="text" maxlength="10" name="num"><br>
         <br>
-        CNPJ: <input type="text" maxlength="14" name="cnpj"><br>
         CPF(responsável): <input type="text" maxlength="11" name="cpf"><br>
         <br>
         Telefone: <input type="num" maxlength="11" name="telefone"><br>

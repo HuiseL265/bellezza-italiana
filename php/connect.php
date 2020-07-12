@@ -9,7 +9,7 @@ if(!$con){
     exit; //parar a execução
 }
 
-if(!mysqli_select_db($con, "db_pda")){
+if(!mysqli_select_db($con, "db_rest")){
     echo "<b>Erro</b>: Não foi possível selecionar o banco de dados." . PHP_EOL;
     echo "<br>";
     echo "<b>Debugging error:</b> " . mysqli_connect_error() . PHP_EOL; 

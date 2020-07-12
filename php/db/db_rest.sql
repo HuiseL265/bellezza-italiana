@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Jul 06, 2020 at 05:33 PM
+-- Generation Time: Jul 12, 2020 at 02:10 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -19,37 +19,48 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_pda`
+-- Database: `db_rest`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_restaurante`
+-- Table structure for table `tb-mesas`
 --
 
-DROP TABLE IF EXISTS `tb_restaurante`;
-CREATE TABLE IF NOT EXISTS `tb_restaurante` (
-  `codRes` int(11) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `tb-mesas`;
+CREATE TABLE IF NOT EXISTS `tb-mesas` (
+  `IdMesa` int(10) NOT NULL,
+  `qtdAcentos` int(20) NOT NULL,
+  `reservado` tinyint(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb-mesas`
+--
+
+INSERT INTO `tb-mesas` (`IdMesa`, `qtdAcentos`, `reservado`) VALUES
+(1, 5, 0),
+(2, 2, 0),
+(3, 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_clientes`
+--
+
+DROP TABLE IF EXISTS `tb_clientes`;
+CREATE TABLE IF NOT EXISTS `tb_clientes` (
+  `cod` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(60) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `cep` int(8) NOT NULL,
-  `rua` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `num` int(10) NOT NULL,
-  `cpfResponsavel` bigint(11) NOT NULL,
-  `cnpj` bigint(14) NOT NULL,
+  `cpf` bigint(11) NOT NULL,
   `telefone` bigint(15) NOT NULL,
   `telefone2` bigint(15) NOT NULL,
   `senha` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`codRes`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `tb_restaurante`
---
-
-INSERT INTO `tb_restaurante` (`codRes`, `nome`, `email`, `cep`, `rua`, `num`, `cpfResponsavel`, `cnpj`, `telefone`, `telefone2`, `senha`) VALUES
-(14, 'RestExemplo', 'RestEx@email.com', 11111111, 'Rua aleatoria', 1111, 66666666666, 55555555555555, 11777777777, 11888888888, '883fb98c56421224ce07c04318b0eeb7');
+  PRIMARY KEY (`cod`)
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

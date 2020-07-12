@@ -63,24 +63,8 @@ session_start();
                            <td><input type="email" name="email"></td>
                        </tr>
                        <tr>
-                           <td>CEP</td>
-                           <td><input type="text" maxlength="8" name="cep"></td>
-                       </tr>
-                       <tr>
-                           <td>Rua</td>
-                           <td><input type="text" name="rua"></td>
-                       </tr>
-                       <tr>
-                           <td>Num</td>
-                           <td><input type="text" maxlength="10" name="num"></td>
-                       </tr>
-                       <tr>
                            <td>CPF (Resp.)</td>
                            <td><input type="text" maxlength="11" name="cpf"></td>
-                       </tr>
-                       <tr>
-                           <td>CNPJ</td>
-                           <td><input type="text" maxlength="14" name="cnpj"></td>
                        </tr>
                        <tr>
                            <td>Telefone</td>
