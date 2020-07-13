@@ -28,7 +28,7 @@ if(($p >= 6 and $_POST['telefone2'] == "") or $p == 7){
             }
     }else{
         echo "<br>Senhas não correspondem.";
-        header("location:../home?$erro=senha");
+        header("location:../home");
     }
 }else{
     echo "<br>Número de campos obrigatórios não preenchidos";

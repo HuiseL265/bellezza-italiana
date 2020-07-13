@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./libs/jquery-3.4.1.js"></script>
-    <script>
-    </script>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 </head>
+
 <body>
-    
+    <form action="reservarMesa.act.php" method="post" >
+        
+        Mesa: <input type="text"  name="IdMesa"><br>
+        Horário: <input type="time"  name="hora"><br>
+        data: <input type="date" name="data"><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 </html>
-
-<?php
-require('connect.php');
-$teste = 1;
-
-$mesas = mysqli_query($con,"SELECT * FROM `tb_mesas`");
-
-while($mesaAtual = mysqli_fetch_array($mesas)){
-    echo ""    
-}
-
-
-?>
-

@@ -12,7 +12,7 @@ if($query->num_rows == 1){
     $query = mysqli_fetch_array($query);
     if($senha == $query['senha']){
         $_SESSION['email'] = $email;
-        header("location:home.php");
+        header("location:../home");
         exit();
     }else{
         $_SESSION['usuario_invalido']=true;

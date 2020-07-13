@@ -24,8 +24,8 @@ session_start();
              <li><a href="agendar.html"><h1>Agende seu horário</h1></a></li>
              
              <form id="form-login" method="post" action="php/logar.act.php">
-               <input type="email" name="email" placeholder="Login">
-               <input type="password" name="senha" placeholder="Senha">
+               <input type="email" name="email" placeholder="Login" required="required">
+               <input type="password" name="senha" placeholder="Senha" required="required">
                <input type="submit" value="LOGAR">
                </ul>
 
