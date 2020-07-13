@@ -19,12 +19,13 @@ $clienteAlt = mysqli_fetch_array($usuariosAlt);
 .items{
     margin:auto;
     width:320px;
-    min-height:340px;
+    height:auto;
     border-radius:10px;
     box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
 }
     .items table{
         margin:auto;
+        border-spacing: 5px;        
     }
 
 tr td:first-child{
@@ -41,15 +42,16 @@ input{
     text-align:center;
 }
 
-a{
-    float:left;
+td a{
+    text-align:center;
+    text-decoration:none;
     color: #808080;
     font-weight: bold;
-    text-decoration:none;
+
     margin:auto;
 
 }
-    a:hover{
+    td a:hover{
         text-decoration: underline;
     }
 
@@ -93,8 +95,8 @@ a{
             <tr>
                 <td>Código</td>
                 <td style="text-align: center;">
-                    <input type="text" name="cod" value="<?php echo $clienteAlt['codRes']?>" hidden="hidden" >
-                    <?php echo $clienteAlt['codRes']?>
+                    <input type="text" name="cod" value="<?php echo $clienteAlt['cod']?>" hidden="hidden" >
+                    <?php echo $clienteAlt['cod']?>
                 </td>
             </tr>
             <tr>
@@ -107,7 +109,7 @@ a{
             </tr>
             <tr>
                 <td>CPF</td>
-                <td><input type="text" maxlength="9" name="cpfResponsavel" value="<?php echo $clienteAlt['cpfResponsavel']?>"></td>
+                <td><input type="text" maxlength="11" name="cpf" value="<?php echo $clienteAlt['cpf']?>"></td>
             </tr>
             <tr>
                 <td>Telefone</td>
@@ -118,13 +120,13 @@ a{
                 <td><input type="text" maxlength="11" name="telefone2" value="<?php echo $clienteAlt['telefone2']?>"></td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="2" style="height:60px;">
                     <button type="submit" id="confirm">Confirmar</button>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <a id="back" href="listarRestaurantes.php"><p>Voltar</p></a>
+                    <a id="back" href="listarUsuarios.php"><p>Voltar</p></a>
                 </td>
             </tr>
     </table>

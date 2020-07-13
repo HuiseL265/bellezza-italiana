@@ -22,12 +22,12 @@
 
 body{
     font-family: "NotoSansTC-bold",sans-serif;
-    background-color:#E58169;
+    background-color:rgba(66, 51, 51,0.9);
     text-decoration: none;
 }
 
 #header{
-    background-color: #b4df91;
+    background-color:#2e2e2e;
     width: auto;
     height: 82px;
     border-radius: 5px 5px;
@@ -47,14 +47,14 @@ body{
 
 #header-container li a h1{
     font-size: 18px;
-    color: black;
+    color: #E58169;
     width: 200px;
     height: 25px;
     
 }
 
 #header-container li a h1:hover{
-    color:#E58169;
+    color:white;
 }
 
 #form-login{
@@ -135,20 +135,31 @@ body{
 /* CODIGO DO ALANZINHO */
 
 .items{
-    margin:auto;
-    width:450px;
-    min-height:340px;
+    float:right;
+    width:340px;
+    min-height:330px;
     border-radius:10px;
-    background-color:#b4df91;	
+    background-color:rgba(46, 46, 46,0.8);	
+
+    display:flex;
 }
     .items table{
-        margin:0;
+        margin:auto;
+        border-collapse: separate;
+        border-spacing: 0 5px;
+        display:flex;
     }
 
+.items table h2{
+    text-align: center;
+    text-shadow: 1.5px 1.5px #964b38;
+}
+
 tr td:first-child{
-    font-size:20px;
-    text-align:left;
+    font-size:14px;
+    text-align:right;
     font-weight: bold;
+    color:white;
 }
 
 input{
@@ -157,7 +168,8 @@ input{
     height:30px;
     line-height:1.5;
     text-align:left;
-    font-size: 16px;
+    font-size: 12px;
+    padding:5px;
 }
 
 a{
@@ -174,27 +186,25 @@ a{
 
 #confirm{
     color:black;
-    background: #b4df91;
+    background: #33df7a;
 
-    width: 100px;
-    height: 30px;
+    width: 180px;
+    height: 45px;
+
+    float:right;
 
     border-radius: 5px;
 
     font-size: 16px;
     font-weight: bold;
-    
-    display:flex;   
-    align-items: center;
-    justify-content: center;
 
-    box-shadow:0px 8px 16px rgba(6, 141, 58, 0.16);
+    box-shadow:0px 4px 16px rgba(7, 206, 83, 0.185);
 
     margin:0;
 }
 
     #confirm:hover{
-        background-color: #E58169;
+        background-color: #ffffff;
         text-decoration:none;
         cursor: pointer;
    

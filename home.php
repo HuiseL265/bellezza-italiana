@@ -9,6 +9,9 @@ session_start();
       <title>SOS Alimentos(Brasil)</title>
       <link rel="shortcut icon" type="image/png" href="css/img/logo/logo.ico">
       <link rel="stylesheet" href="css/home.css">
+
+      <script src="libs/jquery-3.4.1.js"></script>
+      <script src="libs/verificarCadastro.js"></script>
    </head>
    <body>
       <header id="header">
@@ -18,7 +21,7 @@ session_start();
              <li><a href=""><h1>Home</h1></a></li>
              <li><a href=""><h1>Sobre</h1></a></li>
              <li><a href=""><h1>Cardápio</h1></a></li>
-             <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
+             <li><a href="agendar.html"><h1>Agende seu horário</h1></a></li>
              
              <form id="form-login" method="post" action="php/logar.act.php">
                <input type="email" name="email" placeholder="Login">
@@ -52,36 +55,39 @@ session_start();
             <p>TEXTO GENERICO SOBRE SITE DE DOAÇÃO DE ALIMENTOS KKKJ</p>
          </div>
          <div id="registrar">
-            <form action="php/incluir.act.php" method="post">
+            <form action="php/incluir.act.php" method="post" onsubmit="return validarSenhas()">
                <div class="items">
                <table>
+                    <tr>
+                        <td colspan="2"><h2>Cadastro</h2></td>
+                    </tr>
                        <tr>
-                           <td>Nome</td>
-                           <td><input type="text" name="nome"></td>
+                           <td><labeL for="nome">Nome</labeL></td>
+                           <td><input type="text" id="nome" name="nome" required="required"></td>
                        </tr>
                        <tr>
-                           <td>Email</td>
-                           <td><input type="email" name="email"></td>
+                           <td><labeL for="email">Email</labeL></td>
+                           <td><input type="email" id="email" name="email" required="required"></td>
                        </tr>
                        <tr>
-                           <td>CPF (Resp.)</td>
-                           <td><input type="text" maxlength="11" name="cpf"></td>
+                           <td><labeL for="cpf">CPF</labeL></td>
+                           <td><input type="text" maxlength="11" id="cpf" name="cpf" required="required"></td>
                        </tr>
                        <tr>
-                           <td>Telefone</td>
-                           <td><input type="text" maxlength="11" name="telefone"></td>
+                           <td><labeL for="telefone">Telefone</labeL></td>
+                           <td><input type="text" maxlength="11" id="telefone" name="telefone" required="required"></td>
                        </tr>
                        <tr>
-                           <td>Telefone(2)</td>
-                           <td><input type="text" maxlength="11" name="telefone2"></td>
+                           <td><labeL for="telefone2">Telefone(2)</labeL></td>
+                           <td><input type="text" maxlength="11" id="telefone2" name="telefone2"></td>
                        </tr>
                        <tr>
-                           <td>Senha</td>
-                           <td><input type="password" name="senha"></td>
+                           <td><labeL for="senha">Senha</labeL></td>
+                           <td><input type="password" name="senha"  id="senha" required="required"></td>
                        </tr>
                        <tr>
-                           <td>Confirme Senha</td>
-                           <td><input type="password" name="senha2"></td>
+                           <td><labeL for="senha2">Confirme Senha</labeL></td>
+                           <td><input type="password" name="senha2" id="senha2" required="required"></td>
                        </tr>
                        <tr>
                            <td colspan="2">
