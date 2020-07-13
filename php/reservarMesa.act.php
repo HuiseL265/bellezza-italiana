@@ -2,11 +2,26 @@
 require('connect.php');
 session_start();
 
+//define a timezone para São Paulo
+ini_set('date.timezone', 'America/Sao_Paulo');
+
+//pega a data de hoje e hora atual
+$horaHoje = date('h:i:s');
+$dataHoje = date('d/m/Y');
+
 //extrai os dados da reserva
 extract($_POST);
 $IdMesa = $_POST['IdMesa'];
 $data = $_POST['data'];
 $hora = $_POST['hora'];
+
+$horaStr = substr($hora,0,2);
+//caso não esteja no horário de funcionamento, não executar o resto do código
+if(!($horaStr >= 8 and $horaStr <= 17)){
+    echo "A hora está fora do funcionamento do restaurante";
+    exit;
+}
+
 
 //puxa a mesa solicitada: dia,hora e a mesa. 
 $mesaSolicitada = mysqli_query($con,"SELECT * FROM `tb_reserva` WHERE (`IdMesa` = $IdMesa AND `data` = '$data' AND `hora` = '$hora')");
@@ -32,6 +47,7 @@ if(mysqli_num_rows($mesaSolicitada)>0){
 
         if(mysqli_query($con, "INSERT INTO `tb_reserva`(`IdMesa`, `clienteID`, `nomeCliente`, `hora`, `data`, `status`)
                                  VALUES ($IdMesa,'$clienteID','$nomeCliente','$hora','$data','Pendente')")){
+                                     header('location:../agendar');
                             echo "<br>Mesa reservada com sucesso!";
                         }else{
                             echo "<br>Erro ao reservar mesa";
