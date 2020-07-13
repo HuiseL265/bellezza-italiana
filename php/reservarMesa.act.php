@@ -15,6 +15,18 @@ if(mysqli_num_rows($mesaSolicitada)>0){
     echo "Mesa Indisponível";
 }else{
     echo "Mesa Disponível";
+
+    //verifica se o usuário está logado
+    if(isset($_SESSION['email'])){
+        $usuario = mysqli_query($con, "SELECT * FROM `tb_clientes` WHERE `email` = ". $_SESSION['email']);
+        echo $usuario['email'];
+        if(!mysqli_query($con, "INSERT INTO `tb_reserva`(`IdMesa`, `clienteID`, `nomeCliente`, `hora`, `data`, `status`)
+                                 VALUES ($IdMesa,$usuario['clienteID'],'$usuario[nomeCliente]','$hora','$data','Pendente')")){
+                            echo "erroReserva";
+                        };
+    }else{
+        header('location:../home');
+    }
     
 };
 
