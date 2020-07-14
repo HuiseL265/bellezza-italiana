@@ -1,5 +1,9 @@
 <?php
-require('connect.php');
+
+//Este código de registro tem por sua finalidade emitir as reservas
+//que estão marcadas e com status 'Pendente'.
+
+require('../connect.php');
 
 //define a timezone para São Paulo
 ini_set('date.timezone', 'America/Sao_Paulo');
@@ -10,14 +14,24 @@ $dataHoje = date('d/m/Y');
 //criação de data para formato de inclusao no nome do arquivo
 $dataArquivo = date('dmY');
 
-$nomeArquivo = "docs/registro$dataArquivo.txt";
+$nomeArquivo = "registro$dataArquivo.txt";
 
-//se o arquivo de registro existir, apenas adicionar mais conteúdo
-if(file_exists($nomeArquivo)){
-    file_put_contents("$nomeArquivo","\nVitor Pereira;vitor-per@hotmail.com;19;50576009812;1129644576",FILE_APPEND);
-}else{
-    file_put_contents("$nomeArquivo",
-                    "Data: $dataHoje \nHorario: $hora \n\nNome;Email;Idade;CPF;Telefone");
+$dadosReserva = mysqli_query($con, "SELECT * FROM `tb_reserva` WHERE `status` = 'Pendente'");
+
+while($dados = mysqli_fetch_array($dadosReserva)){
+
+    //se o arquivo de registro existir, apenas adicionar mais conteúdo
+    if(file_exists($nomeArquivo)){
+        file_put_contents("$nomeArquivo",
+                         "\n$dados[IdMesa];$dados[clienteID];$dados[nomeCliente];$dados[data];$dados[hora];$dados[status]",
+                         FILE_APPEND);
+    }else{
+        file_put_contents("$nomeArquivo",
+                        "Data: $dataHoje \nHorario do Registro: $hora \n\nIdMesa;ClienteID;Nome do Cliente;Data;Hora;Status
+                        \n$dados[IdMesa];$dados[clienteID];$dados[nomeCliente];$dados[data];$dados[hora];$dados[status]");
+    }
 }
+
+
 
 ?>

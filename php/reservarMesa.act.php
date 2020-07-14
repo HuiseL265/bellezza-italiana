@@ -15,16 +15,27 @@ $IdMesa = $_POST['IdMesa'];
 $data = $_POST['data'];
 $hora = $_POST['hora'];
 
+//pegando a hora definida pelo usuário para transformar
+//em um int sem caracteres especiais
 $horaStr = substr($hora,0,2);
+$minStr = substr($hora, 3,5);
+$newHoraStr = "$horaStr"."$minStr";
+intval($newHoraStr);
+
 //caso não esteja no horário de funcionamento, não executar o resto do código
-if(!($horaStr >= 8 and $horaStr <= 17)){
-    echo "A hora está fora do funcionamento do restaurante";
+if(!($newHoraStr >= 800 and $newHoraStr <= 1700)){
+    echo "A hora agendada está fora do funcionamento do restaurante";
     exit;
 }
 
+//definindo uma hora reservada
+$MenosUmaHoraReserva = substr_replace(($newHoraStr-100), ':', 2, 0);
+$umaHoraReserva = substr_replace(($newHoraStr+100), ':', 2, 0);
 
-//puxa a mesa solicitada: dia,hora e a mesa. 
-$mesaSolicitada = mysqli_query($con,"SELECT * FROM `tb_reserva` WHERE (`IdMesa` = $IdMesa AND `data` = '$data' AND `hora` = '$hora')");
+//puxa as mesas dentro do parametro(mesas iguais, datas iguais e 
+//tem que ter espaço para no mínimo uma hora de reserva) 
+$mesaSolicitada = mysqli_query($con,"SELECT * FROM `tb_reserva` 
+                WHERE (`IdMesa` = $IdMesa AND `data` = '$data' AND `hora` BETWEEN  '$MenosUmaHoraReserva' AND '$umaHoraReserva')");
 
 //há uma solicitação no mesmo dia, mesma hora e mesma mesa?
 if(mysqli_num_rows($mesaSolicitada)>0){
@@ -57,5 +68,3 @@ if(mysqli_num_rows($mesaSolicitada)>0){
     }
     
 };
-
-

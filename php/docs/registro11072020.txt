@@ -1,7 +1,0 @@
-Data: 11/07/2020 
-Horário: 08:47:44 
-
-Nome;Email;Idade;CPF;Telefone
-Vitor Pereira;vitor-per@hotmail.com;19;50576009812;1129644576
-Vitor Pereira;vitor-per@hotmail.com;19;50576009812;1129644576
-Vitor Pereira;vitor-per@hotmail.com;19;50576009812;1129644576
