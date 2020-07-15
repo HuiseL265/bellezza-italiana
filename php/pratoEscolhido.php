@@ -5,13 +5,19 @@
     
     if (isset($_POST['prato'])) {
     $pratos =$_POST['prato'];
+
+    if(count($pratos) == 1){
+      echo "<h3>Prato esolhido:</h3>";
+    }else{
+      echo "<h3>Pratos escolhidos:</h3>";
+    }
       foreach ($pratos as $key => $value) {
           
 
           if (count($pratos) == 1) {
-            echo "Prato escolhido: ".$value."<br>";
+            echo $value."<br>";
           }else {
-              echo "Pratos escolhidos: ".$value."<br>";
+              echo $value."<br>";
           }
       }
         
