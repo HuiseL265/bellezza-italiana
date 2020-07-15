@@ -18,9 +18,9 @@ session_start();
          <a href="#"><img src="css/img/logo/logo2.svg" alt="logo" height="80px"></a>
 
           <ul id="header-container">
-             <li><a href=""><h1>Home</h1></a></li>
+             <li><a href="home.php"><h1>Home</h1></a></li>
              <li><a href=""><h1>Sobre</h1></a></li>
-             <li><a href=""><h1>Cardápio</h1></a></li>
+             <li><a href="php/cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.html"><h1>Agende seu horário</h1></a></li>
              
              <form id="form-login" method="post" action="php/logar.act.php">
