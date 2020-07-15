@@ -6,7 +6,7 @@ session_start();
 ini_set('date.timezone', 'America/Sao_Paulo');
 
 //pega a data de hoje e hora atual
-$horaHoje = date('h:i:s');
+$horaHoje = date('H:i:s');
 $dataHoje = date('d/m/Y');
 
 //extrai os dados da reserva
@@ -29,13 +29,28 @@ if(!($newHoraStr >= 800 and $newHoraStr <= 1700)){
 }
 
 //definindo uma hora reservada
-$MenosUmaHoraReserva = substr_replace(($newHoraStr-100), ':', 2, 0);
-$umaHoraReserva = substr_replace(($newHoraStr+100), ':', 2, 0);
+$MenosUmaHoraReserva = $newHoraStr-100;
+$umaHoraReserva = $newHoraStr+100;
+
+//caso seja menor que 10 horas, adicionar um 0 à esquerda
+if($MenosUmaHoraReserva < 1000){ $MenosUmaHoraReserva = "0".$MenosUmaHoraReserva; }
+if($umaHoraReserva < 1000){ $$umaHoraReserva = "0".$$umaHoraReserva; }
+
+//formatando os números em horas válidas
+$MenosUmaHoraReserva = substr_replace($MenosUmaHoraReserva, ':', 2, 0);
+$umaHoraReserva = substr_replace($umaHoraReserva, ':', 2, 0);
+
+//adicionando 1 min a $MenosUmaHoraReserva e
+//subtraindo 1 min da $umaHoraReserva 
+echo $MenosUmaHoraReserva =  date('H:i', strtotime($MenosUmaHoraReserva) + 60);
+echo $umaHoraReserva = date('H:i', strtotime($umaHoraReserva) - 60);
 
 //puxa as mesas dentro do parametro(mesas iguais, datas iguais e 
 //tem que ter espaço para no mínimo uma hora de reserva) 
 $mesaSolicitada = mysqli_query($con,"SELECT * FROM `tb_reserva` 
-                WHERE (`IdMesa` = $IdMesa AND `data` = '$data' AND `hora` BETWEEN  '$MenosUmaHoraReserva' AND '$umaHoraReserva')");
+                WHERE (`IdMesa` = $IdMesa 
+                AND `data` = '$data' 
+                AND `hora` BETWEEN  '$MenosUmaHoraReserva' AND '$umaHoraReserva')");
 
 //há uma solicitação no mesmo dia, mesma hora e mesma mesa?
 if(mysqli_num_rows($mesaSolicitada)>0){
@@ -68,3 +83,5 @@ if(mysqli_num_rows($mesaSolicitada)>0){
     }
     
 };
+
+?>
