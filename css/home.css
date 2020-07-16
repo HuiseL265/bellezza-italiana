@@ -83,7 +83,7 @@ body{
     
 }
 
-#form-login input[type=submit]{
+#form-login button{
     width: 90px;
     height: 30px;
     border-radius: 5px;
@@ -92,6 +92,8 @@ body{
     font-family:"NotoSansTC-Bold";
     border-color:#E58169;
     text-align: center;
+
+
     
 }
 #form-login input[type=submit]:hover{

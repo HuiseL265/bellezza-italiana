@@ -26,7 +26,7 @@ session_start();
              <form id="form-login" method="post" action="php/logar.act.php">
                <input type="email" name="email" placeholder="Login" required="required">
                <input type="password" name="senha" placeholder="Senha" required="required">
-               <input type="submit" value="LOGAR">
+               <button>LOGAR</button>
                </ul>
 
                <?php
