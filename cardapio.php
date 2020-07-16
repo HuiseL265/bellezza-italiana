@@ -8,7 +8,7 @@ session_start();
       <meta content="width=device-width, initial-scale=1.0" >
       <title>SOS Alimentos(Brasil)</title>
       <link rel="shortcut icon" type="image/png" href="/css/img/logo/logo.ico">
-      <link rel="stylesheet" href="/css/cardapio.css">
+      <link rel="stylesheet" type="text/css" href="/css/cardapio.css">
 
       <script src="/libs/jquery-3.4.1.js"></script>
       <script src="/libs/verificarCadastro.js"></script>

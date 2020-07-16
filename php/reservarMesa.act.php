@@ -53,13 +53,14 @@ $mesaSolicitada = mysqli_query($con,"SELECT * FROM `tb_reserva`
                 AND `hora` BETWEEN  '$MenosUmaHoraReserva' AND '$umaHoraReserva')");
 
 //há uma solicitação no mesmo dia, mesma hora e mesma mesa?
-if(mysqli_num_rows($mesaSolicitada)>0){
+if(mysqli_num_rows($mesaSolicitada) > 0){
     echo "<br>Mesa Indisponível";
 }else{
     echo "<br>Mesa Disponível";
 
     //verifica se o usuário está logado
     if(isset($_SESSION['email'])){
+
         $email = $_SESSION['email'];
         
         //pega os dados a partir do email logado na SESSION
@@ -70,6 +71,14 @@ if(mysqli_num_rows($mesaSolicitada)>0){
         //Pega o cod e o nome do cliente
         $clienteID = $usuario['cod'];
         $nomeCliente = $usuario['nome'];
+
+        
+        $haReservas = mysqli_query($con, "SELECT * FROM `tb_reserva` WHERE `clienteID` = $clienteID AND `status` = 'Pendente'");
+        //Verifica se o usuário já tem uma reserva "Pendente"
+        if(mysqli_num_rows($haReservas) > 0){
+            echo("<br>O usuário em questão já tem uma reserva pendente");
+            exit;
+        }
 
         if(mysqli_query($con, "INSERT INTO `tb_reserva`(`IdMesa`, `clienteID`, `nomeCliente`, `hora`, `data`, `status`)
                                  VALUES ($IdMesa,'$clienteID','$nomeCliente','$hora','$data','Pendente')")){
