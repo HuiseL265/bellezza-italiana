@@ -11,7 +11,7 @@ session_start();
       <link rel="stylesheet" href="/css/cardapio.css">
 
       <script src="/libs/jquery-3.4.1.js"></script>
-      <script src="libs/verificarCadastro.js"></script>
+      <script src="/libs/verificarCadastro.js"></script>
    </head>
    <body>
       <header id="header">
@@ -53,10 +53,15 @@ session_start();
             <form action="pratoEscolhido.php" method="post">
                 <div class="pratos">
         
-                    <img src="img/pratos/taco.jpg" width="300px" height="200px" alt="">
-                    <input type="checkbox" name="prato[]" value="taco">
-                    <img src="img/pratos/sushi.jpg" width="300px" height="200px" alt="">
-                    <input type="checkbox" name="prato[]" value="sushi">
+                    <label for="p1">
+                     <img src="img/pratos/taco.jpg" width="300px" height="200px" alt="">
+                     <input type="checkbox" id="p1" name="prato[]" value="taco">
+                     </label>
+                     <label for="p2">
+                     <img src="img/pratos/sushi.jpg" width="300px" height="200px" alt="">
+                     <input type="checkbox" id="p2" name="prato[]" value="sushi">
+                    </label>
+                    
                 </div>
         
                 <input type="submit" value="Enviar Pedido">
