@@ -9,6 +9,7 @@ session_start();
       <title>Agende seu Horário</title>
       <link rel="shortcut icon" type="image/png" href="css/img/logo/logoRest.png">
       <link rel="stylesheet" href="css/agendar.css">
+      <link rel="stylesheet" href="css/header.css">
 
       <script src="libs/jquery-3.4.1.js"></script>
       <script>
@@ -156,12 +157,16 @@ session_start();
                <tr> <!-- Mesa 2 e 3 estão nesta linha -->
                   <td></td>
                   <td class="cadeira"></td>
-                  <td class="mesa">Mesa 2</td>
+                  <td class="mesa">
+                     <button class="btn-mesa" onclick="escolherMesa('Mesa2')">Mesa 2</button>
+                  </td>
                   <td class="cadeira"></td>
                   <td></td>
                   <td></td>
                   <td class="cadeira"></td>
-                  <td class="mesa">Mesa 3</td>
+                  <td class="mesa">
+                     <button class="btn-mesa" onclick="escolherMesa('Mesa3')">Mesa 3</button>
+                  </td>
                   <td class="cadeira"></td>
                   <td></td>
                </tr>
@@ -192,6 +197,7 @@ session_start();
             </table>
    
             <div class="legendaMenu">
+
                <div class="legendas">
                   <div id="square" class="mesa"></div>
                   <p>Mesas</p>
@@ -201,7 +207,14 @@ session_start();
                   <div id="square" class="cadeira"></div>
                   <p>Acentos</p>
                </div>
+
+               <div id="panel-mesa">
+                  <p></p>
+               </div>
             </div>
+
+           
+               
          </form>
       </div>
 

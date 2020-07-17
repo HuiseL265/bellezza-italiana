@@ -9,9 +9,28 @@ session_start();
       <title>SOS Alimentos(Brasil)</title>
       <link rel="shortcut icon" type="image/png" href="css/img/logo/logoRest.png">
       <link rel="stylesheet" href="css/home.css">
+      <link rel="stylesheet" href="css/header.css">
 
       <script src="libs/jquery-3.4.1.js"></script>
-      <script src="libs/verificarCadastro.js"></script>
+      <script>
+          $.ajax({
+  				url: 'php/verificar_login.php',
+  				success: function(data) {
+               console.log(data);
+               if(data == "Logado"){
+                  $('#registrar').hide();
+                  $('#form-login').hide();
+                  $('#usuario').show();
+               }
+               if(data == "NaoLogado"){
+                  $('#usuario').hide();
+                  $('#form-login').show();
+                  $('#registrar').show();
+               }
+            }
+            });
+
+        </script>
    </head>
    <body>
       <header id="header">
@@ -22,12 +41,27 @@ session_start();
              <li><a href=""><h1>Sobre</h1></a></li>
              <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
-             
-             <form id="form-login" method="post" action="php/logar.act.php">
-               <input type="email" name="email" placeholder="Login" required="required">
-               <input type="password" name="senha" placeholder="Senha" required="required">
+
+              <!--logado-->
+              <div id="usuario">
+                   <div id="info-usuario">
+                      <p id="nome"><?php echo $_SESSION['nomeUsuario'] ?></p>
+                      <div class="sair"><a href="php/sair.php">Sair</a></div>
+                      
+                   </div>
+                   <div id="container-foto">
+                      <div id="fotoUsuario">
+                         <img src="./css/img/usuarioIcon/user1.png" alt="userIcon">
+                      </div>
+                   </div>
+                </div>
+
+                <!--não logado-->             
+             <form id="form-login" method="post" action="php/logar.act.php" onsubmit="javascript:Logar()">
+               <input type="email" id="emailLogin" name="email" placeholder="Login" required="required">
+               <input type="password" id="senhaLogin" name="senha" placeholder="Senha" required="required">
                <button>LOGAR</button>
-               </ul>
+            </ul>
 
                <?php
                 if(isset($_SESSION['usuario_invalido'])){
@@ -51,8 +85,8 @@ session_start();
       </header>
       <div id="central">
          <div id="info">
-            <img src="css/img/the-rock-alimenta-namorada 1.svg" alt="SOS alimentos" height="400px">
-            <p>TEXTO GENERICO SOBRE SITE DE DOAÇÃO DE ALIMENTOS KKKJ</p>
+            <!--<img src="css/img/the-rock-alimenta-namorada 1.svg" alt="SOS alimentos" height="400px">
+            <p>TEXTO GENERICO SOBRE SITE DE DOAÇÃO DE ALIMENTOS KKKJ</p>-->
          </div>
          <div id="registrar">
             <form action="php/incluir.act.php" method="post" onsubmit="return validarSenhas()">

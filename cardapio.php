@@ -7,8 +7,11 @@ session_start();
       <meta charset="UTF-8">
       <meta content="width=device-width, initial-scale=1.0" >
       <title>SOS Alimentos(Brasil)</title>
-      <link rel="shortcut icon" type="image/png" href="css/img/logo/logoRest.png">
-      <link rel="stylesheet" type="text/css" href="/css/cardapio.css">
+
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="css/img/logo/logoItaliana.svg">
+      <link rel="stylesheet" type="text/css" href="css/cardapio.css">
+      <link rel="stylesheet" href="css/header.css">
 
       <script src="libs/jquery-3.4.1.js"></script>
       <script src="libs/verificarCadastro.js"></script>
