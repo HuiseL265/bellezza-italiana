@@ -107,6 +107,69 @@ body{
     color:#E58169;
 }
 
+/* css do usuarioLogado */
+#usuario{
+    width:200px;
+    height:82px;
+    display: flex;
+}
+    #container-foto{
+        width:60px;
+        height:auto;
+        margin-top: 1px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    #usuario #fotoUsuario, #fotoUsuario img{
+        width:45px;
+        height:45px;
+        margin:0;
+    }
+
+    #usuario #fotoUsuario{
+        box-shadow: 2px 2px 4px rgba(168, 58, 7, 0.5);
+    }
+
+        #usuario #fotoUsuario{
+            width:45px;
+            height:45px;
+            border-radius: 50px;
+            background-color:rgb(61, 54, 46);
+        }
+
+    #info-usuario{
+        padding-top:20px;
+        line-height:20px;
+        justify-content: center;
+        height:inherit;
+    }
+
+    #info-usuario{
+        width:140px;
+        height: auto;
+        margin-top: 5px;
+    }
+
+    #info-usuario,#info-usuario a{
+        text-align:right;
+    }
+
+    .sair{
+        height: 20px;
+        float: right;;
+    }
+
+        #info-usuario a{
+            width: 30px;
+            font-size:13px;
+        }
+
+        #info-usuario p{
+            color:white;
+        }
+
 
 
 #central{
@@ -139,6 +202,11 @@ a{
     text-decoration:none;
     margin:auto;
 
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #f3f3f3;
 }
  
 label:hover, input[type=checkbox]{

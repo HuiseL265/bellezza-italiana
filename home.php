@@ -7,7 +7,7 @@ session_start();
       <meta charset="UTF-8">
       <meta content="width=device-width, initial-scale=1.0" >
       <title>SOS Alimentos(Brasil)</title>
-      <link rel="shortcut icon" type="image/png" href="css/img/logo/logo.ico">
+      <link rel="shortcut icon" type="image/png" href="css/img/logo/logoRest.png">
       <link rel="stylesheet" href="css/home.css">
 
       <script src="libs/jquery-3.4.1.js"></script>
@@ -15,13 +15,13 @@ session_start();
    </head>
    <body>
       <header id="header">
-         <a href="#"><img src="css/img/logo/logo2.svg" alt="logo" height="80px"></a>
+         <a href="#"><img src="css/img/logo/logoRest.png" alt="logo" height="80px"></a>
 
           <ul id="header-container">
              <li><a href="home.php"><h1>Home</h1></a></li>
              <li><a href=""><h1>Sobre</h1></a></li>
              <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
-             <li><a href="agendar.html"><h1>Agende seu horário</h1></a></li>
+             <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
              
              <form id="form-login" method="post" action="php/logar.act.php">
                <input type="email" name="email" placeholder="Login" required="required">

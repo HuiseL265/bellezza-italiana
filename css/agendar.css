@@ -169,6 +169,7 @@ a{
 }
     a:hover{
         text-decoration: underline;
+        color: #f3f3f3;
     }
 
 #confirm{
@@ -207,8 +208,8 @@ a{
 }
     #container-foto{
         width:60px;
-        height:82px;
-
+        height:auto;
+        margin-top: 1px;
         display:flex;
         justify-content:center;
         align-items:center;
@@ -238,15 +239,23 @@ a{
         height:inherit;
     }
 
-    #info-usuario,#info-usuario a{
+    #info-usuario{
         width:140px;
+        height: auto;
+        margin-top: 5px;
     }
 
     #info-usuario,#info-usuario a{
         text-align:right;
     }
 
+    .sair{
+        height: 20px;
+        float: right;;
+    }
+
         #info-usuario a{
+            width: 30px;
             font-size:13px;
         }
 

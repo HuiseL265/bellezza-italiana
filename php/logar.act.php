@@ -10,6 +10,7 @@ $query = mysqli_query($con,"SELECT * FROM `tb_clientes` where `email` = '$email'
 
 if($query->num_rows == 1){
     $query = mysqli_fetch_array($query);
+    $_SESSION['nomeUsuario'] = $query['nome'];
     if($senha == $query['senha']){
         $_SESSION['email'] = $email;
         header("location:../agendar");
