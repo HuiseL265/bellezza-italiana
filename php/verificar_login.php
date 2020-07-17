@@ -1,6 +1,9 @@
 <?php
-if(!isset($_SESSION['email'])){
-    header('location: login.php');
-}
+    session_start();
 
+    if(isset($_SESSION['email'])){
+        echo "Logado";
+    }else{
+        echo "NaoLogado";
+    }
 ?>

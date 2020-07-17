@@ -63,10 +63,10 @@
   				url: 'excluirUsuario.php?codigo='+codigo,
   				success: function(data) {
 					console.log(data);
-    			alert(data);
-				location.reload();
-  		}
-	});
+                    alert(data);
+                    location.reload();
+  		        }
+	    });
 	}	
 }
 </script>
