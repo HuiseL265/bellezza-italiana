@@ -85,7 +85,7 @@ session_start();
       </header>
       <div id="central">
          <div id="info">
-            <!--<img src="css/img/the-rock-alimenta-namorada 1.svg" alt="SOS alimentos" height="400px">
+            <img src="css/img/background/the-rock-alimenta-namorada 1.svg" alt="SOS alimentos" height="400px">
             <p>TEXTO GENERICO SOBRE SITE DE DOAÇÃO DE ALIMENTOS KKKJ</p>-->
          </div>
          <div id="registrar">

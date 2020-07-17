@@ -91,13 +91,13 @@ session_start();
         
                     <label for="p1">
                         <h1>Título</h1>
-                        <img src="php/img/pratos/taco.jpg" width="300px" height="200px" alt="">
+                        <img src="php/img/cardapio/pratos/taco.jpg" width="300px" height="200px" alt="">
                         <input type="checkbox" id="p1" name="prato[]" value="taco">
                         <h3>Descrição comida</h3>
                      </label>
                      <label for="p2">
                         <h1>Título</h1>
-                        <img src="php/img/pratos/sushi.jpg" width="300px" height="200px" alt="">
+                        <img src="php/img/cardapio/pratos/sushi.jpg" width="300px" height="200px" alt="">
                         <input type="checkbox" id="p2" name="prato[]" value="sushi">
                         <h3>Descrição comida</h3>
                     </label>

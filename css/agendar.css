@@ -134,35 +134,71 @@ a{
         background-color:white;
     }
 
-    .mesa .btn-mesa{
+    .btn-mesa{
         width:inherit;
         height:inherit;
         background-color:transparent;
         border-color:transparent;
     }
 
-    .mesa .btn-mesa:hover{
-        background-color:rgb(201, 108, 85);
+    .btn-mesa:hover{
         cursor:pointer;
     }
 
-#container-menu .mesa{
+#container-menu .mesaDisponivel{
     text-align:center;
-    background-color:#E58169;
+    background-color:#69e584;
+}
+
+#container-menu .mesaOcupada{
+    background-color:#bb5a5a;
 }
 
 #container-menu .cadeira{
-    background-color:#5f6161;
+    background-color:#646464;
 }
 
 .legendaMenu{
     float:right;
     width:226px;
-    height:478px;
+    height:480px;
 
     display:grid;
-
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 100px 150px 1fr 1fr;
+    gap:1px;
+    grid-template-areas:
+        "legendaTitle legendaTitle"
+        "legendaMesa legendaCad"
+        "escolhaData escolhaData"
+        "escolhaHora escolhaHora";
 }
+    .legendaMenu #legendaTitle{
+        text-align:center;
+        grid-area: legendaTitle;
+    }
+
+    .legendaMenu .mesa{
+        grid-area:legendaMesa;
+    }
+
+    .legendaMenu .cadeira{
+        grid-area:legendaCad;
+    }
+    
+    .legendaMenu #escolhaData{
+        grid-area: escolhaData;
+    }
+
+    .legendaMenu #escolhaHora{
+        grid-area: escolhaHora;
+    }
+
+    .legendaMenu div{
+        background-color:rgba(105, 229, 177,0.3);
+
+    }
+
     .legendaMenu p{
         color: white;
         text-align:center;
@@ -174,18 +210,4 @@ a{
     border:1px solid white;
 
     margin:10px auto;
-}
-
-.legendas{
-    width:113px;
-    height:180px;
-    margin:0px;
-}
-
-#panel-mesa{
-    width:226px;
-    height:40px;
-    background-color:white;
-    justify-self: end;
-    align-self: unset;
 }
