@@ -7,23 +7,23 @@ session_start();
       <meta charset="UTF-8">
       <meta content="width=device-width, initial-scale=1.0" >
       <title>SOS Alimentos(Brasil)</title>
-      <link rel="shortcut icon" type="image/png" href="/css/img/logo/logo.ico">
-      <link rel="stylesheet" type="text/css" href="/css/cardapio.css">
+      <link rel="shortcut icon" type="image/png" href="css/img/logo/logo.ico">
+      <link rel="stylesheet" type="text/css" href="css/cardapio.css">
 
       <script src="/libs/jquery-3.4.1.js"></script>
       <script src="/libs/verificarCadastro.js"></script>
    </head>
    <body>
       <header id="header">
-         <a href="#"><img src="/css/img/logo/logo2.svg" alt="logo" height="80px"></a>
+         <a href="#"><img src="css/img/logo/logo2.svg" alt="logo" height="80px"></a>
 
           <ul id="header-container">
-             <li><a href="/home.php"><h1>Home</h1></a></li>
+             <li><a href="home.php"><h1>Home</h1></a></li>
              <li><a href=""><h1>Sobre</h1></a></li>
              <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
-             <li><a href="/agendar.html"><h1>Agende seu horário</h1></a></li>
+             <li><a href="agendar.html"><h1>Agende seu horário</h1></a></li>
              
-             <form id="form-login" method="post" action="logar.act.php">
+             <form id="form-login" method="post" action="php/logar.act.php">
                <input type="email" name="email" placeholder="Login" required="required">
                <input type="password" name="senha" placeholder="Senha" required="required">
                <input type="submit" value="LOGAR">
@@ -50,15 +50,15 @@ session_start();
              </form>
       </header>
       <div id="central">
-            <form action="pratoEscolhido.php" method="post">
+            <form action="php/pratoEscolhido.php" method="post">
                 <div class="pratos">
         
                     <label for="p1">
-                     <img src="img/pratos/taco.jpg" width="300px" height="200px" alt="">
+                     <img src="php/img/pratos/taco.jpg" width="300px" height="200px" alt="">
                      <input type="checkbox" id="p1" name="prato[]" value="taco">
                      </label>
                      <label for="p2">
-                     <img src="img/pratos/sushi.jpg" width="300px" height="200px" alt="">
+                     <img src="php/img/pratos/sushi.jpg" width="300px" height="200px" alt="">
                      <input type="checkbox" id="p2" name="prato[]" value="sushi">
                     </label>
                     

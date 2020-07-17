@@ -54,6 +54,22 @@
     }
 
 </style>
+<script src="libs/jquery-3.4.1.min.js"></script>
+<script>
+	function confirmar(codigo){
+		opcao = confirm("Deseja excluir o registro "+codigo+" ?");	
+	if(opcao == true){
+		$.ajax({
+  				url: 'excluirUsuario.php?codigo='+codigo,
+  				success: function(data) {
+					console.log(data);
+    			alert(data);
+				location.reload();
+  		}
+	});
+	}	
+}
+</script>
 <body>
     <?php
     require('connect.php');
@@ -86,6 +102,11 @@
                         <img src=img/edit.png>
                     </a>
                  </td>";
+            echo "<td>
+                 <a href=javascript:confirmar($cliente[cod])>
+                     <img src=img/erase.png>
+                 </a>
+              </td>";
             echo "</tr>";
     }
     echo "</table>";

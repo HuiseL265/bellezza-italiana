@@ -32,6 +32,4 @@ while($dados = mysqli_fetch_array($dadosReserva)){
     }
 }
 
-
-
 ?>
