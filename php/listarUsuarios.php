@@ -54,7 +54,7 @@
     }
 
 </style>
-<script src="libs/jquery-3.4.1.min.js"></script>
+<script src="../libs/jquery-3.4.1.js"></script>
 <script>
 	function confirmar(codigo){
 		opcao = confirm("Deseja excluir o registro "+codigo+" ?");	
