@@ -139,6 +139,7 @@ body{
             background-color:rgb(61, 54, 46);
         }
 
+    
     #info-usuario{
         padding-top:20px;
         line-height:20px;
@@ -209,12 +210,25 @@ a:hover{
     color: #f3f3f3;
 }
  
-label:hover, input[type=checkbox]{
-    cursor: pointer;
+ input[type=checkbox]{
+    display: none;
+    
 }
-
+label{
+    cursor: pointer;
+    width: 300px;
+    height: 200px;
+}
 
 
 .pratos{
     display: flex;
+}
+.borda{
+    border: solid 10px blue;
+}
+
+label img{
+    width: 300px;
+    height: 200px;
 }

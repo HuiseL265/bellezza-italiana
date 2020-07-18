@@ -321,3 +321,7 @@ a{
     height:inherit;
     margin:0px;
 }
+
+.borda{
+    border: solid 10px blue;
+}
