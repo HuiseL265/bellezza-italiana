@@ -135,14 +135,20 @@ a{
     }
 
     .btn-mesa{
-        width:inherit;
-        height:inherit;
+        width:100%;
+        height:100%;
         background-color:transparent;
         border-color:transparent;
+        color:#353434;
+        line-height: 20px;
+        display:flex;
+        justify-content: center;
+        align-items:center;
     }
 
     .btn-mesa:hover{
         cursor:pointer;
+        color:#353434;
     }
 
 #container-menu .mesaDisponivel{
@@ -161,19 +167,21 @@ a{
 .legendaMenu{
     float:right;
     width:226px;
-    height:480px;
+    height:100%;
 
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 30px 100px 150px 1fr 1fr;
+    grid-template-rows: 30px 100px 150px 80px 1fr;
     gap:1px;
     grid-template-areas:
         "legendaTitle legendaTitle"
         "legendaMesa legendaCad"
-        "escolhaData escolhaData"
-        "escolhaHora escolhaHora";
+        "Data Data"
+        "Hora Hora"
+        "mesaSelecionada-panel mesaSelecionada-panel";
 }
     .legendaMenu #legendaTitle{
+        color: white;
         text-align:center;
         grid-area: legendaTitle;
     }
@@ -186,13 +194,36 @@ a{
         grid-area:legendaCad;
     }
     
-    .legendaMenu #escolhaData{
-        grid-area: escolhaData;
+    .legendaMenu #Data{
+        grid-area: Data;
     }
 
-    .legendaMenu #escolhaHora{
-        grid-area: escolhaHora;
+    .legendaMenu #Hora{
+        grid-area: Hora;
+        display:flex;
+        justify-content:center;
+        align-items:center;
     }
+
+        #Hora #selectHora{
+            text-align:center;
+            width:150px;
+            height:25px;
+            border-radius: 20px;
+        }
+
+            #selectHora option{
+                text-align:center;
+            }
+
+    .legendaMenu #mesaSelecionada-panel{
+        color:rgb(243, 243, 243);
+        grid-area:mesaSelecionada-panel;
+        text-align:center;
+    }
+        #mesaSelecionada-panel p{
+            margin-top:10px;
+        }
 
     .legendaMenu div{
         background-color:rgba(105, 229, 177,0.3);
