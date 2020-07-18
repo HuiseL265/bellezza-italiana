@@ -27,6 +27,18 @@ session_start();
                }
             }
             });
+
+            function escolherMesa(numMesa){
+               $.ajax({
+                  url: 'php/verificarMesa.php',
+               success: function(data) {
+                  alert(data);
+               }
+               });
+               
+               $("#mesaSelecionada").html(numMesa);
+            }
+
       </script>
    </head>
    <body>
@@ -69,7 +81,7 @@ session_start();
       <div id="container-menu">
          <form action="" method="post">
 
-            <table>
+            <table> <!-- Tabela das mesas -->
                <tr>
                   <td></td>
                   <td></td>
@@ -100,7 +112,7 @@ session_start();
                   <td></td>
                   <td></td>
                   <td class="mesaDisponivel" colspan="2">
-                     <button class="btn-mesa" onclick="escolherMesa('Mesa3')">Mesa 3</button>
+                     <a href="javascript:escolherMesa(1)" class="btn-mesa">Mesa 1</a>
                   </td>
                   <td></td>
                   <td></td>
@@ -159,14 +171,14 @@ session_start();
                   <td></td>
                   <td class="cadeira"></td>
                   <td class="mesaDisponivel">
-                     <button class="btn-mesa" onclick="escolherMesa('Mesa2')">Mesa 2</button>
+                     <a class="btn-mesa" onclick="escolherMesa(2)">Mesa 2</a>
                   </td>
                   <td class="cadeira"></td>
                   <td></td>
                   <td></td>
                   <td class="cadeira"></td>
                   <td class="mesaDisponivel">
-                     <button class="btn-mesa" onclick="escolherMesa('Mesa3')">Mesa 3</button>
+                     <a class="btn-mesa" onclick="escolherMesa(3)">Mesa 3</a>
                   </td>
                   <td class="cadeira"></td>
                   <td></td>
@@ -208,18 +220,24 @@ session_start();
                   <div id="square" class="mesaOcupada"></div>
                   <p>Ocupado</p>
                </div>
-               <div id="escolhaData">
+               <div id="Data">
 
                </div>
-               <div id="escolhaHora">
-
+               <div id="Hora">
+                  <select name="selectHora" id="selectHora">
+                     <option value="none"></option>
+                     <option value="09:00">09:00</option>
+                     <option value="volvo">Volvo</option>
+                     <option value="volvo">Volvo</option>
+                  </select>
                </div>
-               <div></div>
+               <div id="mesaSelecionada-panel">
+                  <h3>Mesa Selecionada</h3>
+                  <p id="mesaSelecionada">None</p>
+               </div>
                <div></div>
             </div>
 
-           
-               
          </form>
       </div>
 
