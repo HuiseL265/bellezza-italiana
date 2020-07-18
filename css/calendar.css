@@ -1,0 +1,47 @@
+.cal {
+	background-color:#ced1cb;
+    border-collapse: collapse;
+	width: 100%;z-index: -1;
+}
+
+.cal th, .cal td {
+    text-align: center;
+	padding: 1px;
+	font-size:12px;
+	width:15px;
+}
+
+.cal tr:nth-child(even){background-color: #f2f2f2}
+
+.day:hover{
+	background-color: #E58169;
+	color: white;
+	}
+
+.event:hover{
+	background-color: #E58169;
+	color: white;
+	}
+.cal a{
+	font-size:10px;
+	margin: 1px;
+	padding:2px;	
+	background-color: #b8542d;
+	color: white;
+
+	border-radius:2px;
+	border-color:transparent
+	/*border:2px solid  #259b24;*/
+}
+.cal a:hover{
+	background-color: #E58169;
+	/*border:2px solid  #E58169;*/
+}
+
+.submit{
+	margin-top: 10px;
+}
+.appt{
+	background-color: #ffeb3b;
+	color: black;
+}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+require('php/calendarphp/getvar.php');
 ?>
 <html lang="pt-br">
    <head>
@@ -10,6 +11,10 @@ session_start();
       <link rel="shortcut icon" type="image/png" href="css/img/logo/logoRest.png">
       <link rel="stylesheet" href="css/agendar.css">
       <link rel="stylesheet" href="css/header.css">
+
+      <link rel="stylesheet" type="text/css" href="css/calendar.css">
+      <script type="text/javascript" src="libs/jquery.min.js"></script>
+      <script type="text/javascript" src="libs/main.js"></script>
 
       <script src="libs/jquery-3.4.1.js"></script>
       <script>
@@ -70,7 +75,9 @@ session_start();
              <li><a href=""><h1>Sobre</h1></a></li>
              <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
+             
              <div class="login">
+             
 
                <!--logado-->
                 <div id="usuario">
@@ -92,15 +99,15 @@ session_start();
                   <input type="password" name="senha" placeholder="Senha">
                   <input type="submit" value="LOGAR">
                 </form>
-
+                </ul>
              </div>
-          </ul>
+          
       </header>
 
       <div id="container-menu">
          <form action="" method="post">
 
-            <table> <!-- Tabela das mesas -->
+            <table class="table-mesas"> <!-- Tabela das mesas -->
                <tr>
                   <td></td>
                   <td></td>
@@ -230,7 +237,7 @@ session_start();
    
             <div class="legendaMenu">
 
-               <div id="legendaTitle">Legendas</div>
+               <!--<div id="legendaTitle">Legendas</div>-->
                <div>
                   <div id="square" class="mesaDisponivel"></div>
                   <p>Disponivel</p>
@@ -241,8 +248,33 @@ session_start();
                </div>
                <div id="Data">
 
+                  <table style="border:2px solid transparent;" class="cal"> <!--calendario bugado -->
+                     <tr>
+
+                     <td><a class="back">Back</a></td>
+                     <td colspan="5" style="text-align:center;">
+                     <?php echo "<span class=MYdiv id=".$month."/".$Year."/".$numDays.">".$day.",".$monthName.", ".$Year."</span>"; 
+                        echo "<div class='daysel' style='display:none;' id=".$day."></div>";
+                     ?>
+                     </td>
+                     <td><a class="next">Next</a></td>
+
+                     </tr>
+                     <?php 
+                     echo "<div class='viewtype' id=".$viewtype." style='display:none;'></div>";
+
+                     if ($viewtype=="month") {
+                     require 'php/calendarphp/month.php'; 
+                     }
+                     if ($viewtype=="day") {
+                     require 'php/calendarphp/day.php'; 
+                     }
+
+                     ?>
+                  </table>
                </div>
-               <div id="Hora">
+
+               <div id="Hora"> <!-- Hora -->
                   <p>Horários disponíveis</p>
                   <select name="selectHora" id="selectHora" onchange="definirHora()">
                      <option value="none"></option>
@@ -257,11 +289,11 @@ session_start();
                      <option value="17:00">17:00</option>                                     
                   </select>
                </div>
-               <div id="mesaSelecionada-panel">
+               <div id="mesaSelecionada-panel"> <!-- Mesa Selecionada PANEL -->
                   <h3>Mesa selecionada</h3>
                   <p id="mesaSelecionada">Nenhuma mesa selecionada</p>
                </div>
-               <div id="confirmarReserva-panel">
+               <div id="confirmarReserva-panel"> <!-- Confirmação da Reserva -->
                   <button type="submit">Confirmar Reserva</button>
                </div>
             </div>
