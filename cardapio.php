@@ -33,9 +33,13 @@ session_start();
             });
 
             $(document).ready(function(e){
-               $('label').click(function(f){
+               $('article').click(function(f){
                   $(this).toggleClass("borda");
-                  console.log(this);
+                  console.log(this)
+               })
+                  $('article img').click(function(f){
+                   parente = $(this).parent().parent();
+                   $(parente).toggleClass("borda");
                })
             })
       </script>
@@ -69,7 +73,7 @@ session_start();
              <form id="form-login" method="post" action="logar.act.php">
                <input type="email" name="email" placeholder="Login" required="required">
                <input type="password" name="senha" placeholder="Senha" required="required">
-               <input type="submit" value="LOGAR">
+               <button>LOGAR</button>
                </ul>
 
                <?php
@@ -99,7 +103,7 @@ session_start();
                     <article>
                         <h1>Título</h1>
                         <label for="p1">
-                        <img src="css/img/cardapio/pratos/taco.jpg" width="300px" height="200px" alt="">
+                        <img src="css/img/cardapio/pratos/taco.jpg" alt="">
                         </label>
                         <input type="checkbox" id="p1" name="prato[]" value="taco">
                         <h3>Descrição comida</h3>
@@ -108,7 +112,7 @@ session_start();
                      <article>
                         <h1>Título</h1>
                         <label for="p2">
-                        <img src="css/img/cardapio/pratos/sushi.jpg" width="300px" height="200px" alt="">
+                        <img src="css/img/cardapio/pratos/sushi.jpg" alt="">
                         </label>
                         <input type="checkbox" id="p2" name="prato[]" value="sushi">
                         <h3>Descrição comida</h3>

@@ -4,7 +4,6 @@
     list-style: none;
     box-sizing:border-box;
     outline: none;
-    -webkit-user-select: none;
     outline-style: none;
     font-family:"NotoSansTC-Bold", 'Noto Sans TC';
     font-weight: 700;
@@ -86,7 +85,7 @@ body{
     
 }
 
-#form-login input[type=submit]{
+#form-login button{
     width: 90px;
     height: 30px;
     border-radius: 5px;
@@ -95,9 +94,8 @@ body{
     font-family:"NotoSansTC-Bold";
     border-color:#E58169;
     text-align: center;
-    
 }
-#form-login input[type=submit]:hover{
+#form-login button:hover{
     width: 90px;
     height: 30px;
     border-radius: 5px;
@@ -217,6 +215,7 @@ a:hover{
  input[type=checkbox]{
     display: none;
     
+    
 }
 label{
     cursor: pointer;
@@ -229,7 +228,8 @@ label{
     display: flex;
 }
 .borda{
-    border: solid 10px blue;
+    border: solid 5px blue;
+
 }
 
 label img{

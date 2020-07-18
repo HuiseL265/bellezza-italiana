@@ -4,7 +4,6 @@
     list-style: none;
     box-sizing:border-box;
     outline: none;
-    -webkit-user-select: none;
     outline-style: none;
     font-family:"NotoSansTC-Bold";
     text-decoration: none !important
@@ -24,6 +23,7 @@ body{
     font-family: "NotoSansTC-bold",sans-serif;
     background-color:rgba(66, 51, 51,0.9);
     text-decoration: none;
+    height: 100vh;
 }
 
 #header{
@@ -96,7 +96,7 @@ body{
 
     
 }
-#form-login input[type=submit]:hover{
+#form-login button:hover{
     width: 90px;
     height: 30px;
     border-radius: 5px;
@@ -120,12 +120,12 @@ body{
 
 #info{
     width: 600px;
-    height: 700px;
+    height: 500px;
 
 }
 #registrar{
     width: 600px;
-    height: 700px;
+    height: 500px;
     margin-right: 200px;
 
 }
@@ -211,3 +211,35 @@ a{
         cursor: pointer;
    
 	}
+
+
+#rodape{
+    width: 100vw;
+    height: 560px;
+    background-color: #E58169;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    color: rgba(66, 51, 51,0.9);;
+}
+
+#mapa{
+    position: relative;
+    width: 400px;
+    height: 200px;
+    top: 0;
+    left: 50%;
+    margin-left: -250px;
+}
+
+#endereco{
+    width: 400px;
+    height: 70px;
+    background-color: #33df7a;
+    float: left;
+    border-radius: 5px;
+}
+
+#endereco button{
+    margin-left: 100px;
+}

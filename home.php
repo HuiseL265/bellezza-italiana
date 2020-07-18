@@ -133,5 +133,20 @@ session_start();
            </form>
          </div>
       </div>
+
+
+      <div id="rodape">
+
+      <H1>LOCALIZAÇÃO</H1>
+      <div id="endereco">
+      <p>Av. de Berna 3, 1050-062 Lisboa, Portugal</p>
+      <a href="https://www.google.com/maps/dir//38.7410367,-9.1474807/@38.741037,-9.147481,16z?hl=pt-BR"><button type="submit" id="confirm">ROTAS</button></a>
+      </div>
+      
+      <div id="mapa">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.9878575023963!2d-9.149669384387172!3d38.741040863749966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19339e13a1ba03%3A0x6f4663fc6ffafec2!2sTagliatelle!5e0!3m2!1spt-BR!2sbr!4v1595032900258!5m2!1spt-BR!2sbr" width="500" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+      
+      </div>
    </body>
 </html>
