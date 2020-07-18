@@ -27,7 +27,6 @@ body{
     text-decoration: none;
 }
 
-<<<<<<< HEAD
 #header{
     background-color:#2e2e2e;
     width: auto;
@@ -174,8 +173,6 @@ body{
 
 
 
-=======
->>>>>>> 58fad9730a137a1ef1bed4920fc96e43b43c97fc
 #central{
     display: flex;
     justify-content: space-around;

@@ -13,6 +13,13 @@ session_start();
 
       <script src="libs/jquery-3.4.1.js"></script>
       <script>
+
+         $(document).ready(function() {
+            $('#confirmarReserva-panel button').hide();
+            $('#mesaSelecionada-panel h3').hide();
+            $('#mesaSelecionada-panel p').hide();
+         });
+
             $.ajax({
   				url: 'php/verificar_login.php',
   				success: function(data) {
@@ -27,6 +34,30 @@ session_start();
                }
             }
             });
+
+            
+
+            function definirHora(){
+               hora = $('#selectHora').val();
+               //reseta os valores e esconde o botão confirmar
+               $('#confirmarReserva-panel button').hide();
+               $("#mesaSelecionada").html("Nenhuma mesa selecionada");
+
+               //toggle da mesa escolhida
+               if(hora != "none"){
+                  $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').show();
+               }else{
+                  $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').hide();
+               }
+            }
+         
+            function escolherMesa(numMesa){
+               if(hora != "none"){
+                  $("#mesaSelecionada").html(numMesa);
+                  $('#confirmarReserva-panel button').show();
+               }               
+            }
+
       </script>
    </head>
    <body>
@@ -69,7 +100,7 @@ session_start();
       <div id="container-menu">
          <form action="" method="post">
 
-            <table>
+            <table> <!-- Tabela das mesas -->
                <tr>
                   <td></td>
                   <td></td>
@@ -100,7 +131,7 @@ session_start();
                   <td></td>
                   <td></td>
                   <td class="mesaDisponivel" colspan="2">
-                     <button class="btn-mesa" onclick="escolherMesa('Mesa3')">Mesa 3</button>
+                     <a href="javascript:escolherMesa(1)" class="btn-mesa">Mesa 1</a>
                   </td>
                   <td></td>
                   <td></td>
@@ -159,14 +190,14 @@ session_start();
                   <td></td>
                   <td class="cadeira"></td>
                   <td class="mesaDisponivel">
-                     <button class="btn-mesa" onclick="escolherMesa('Mesa2')">Mesa 2</button>
+                     <a class="btn-mesa" onclick="escolherMesa(2)">Mesa 2</a>
                   </td>
                   <td class="cadeira"></td>
                   <td></td>
                   <td></td>
                   <td class="cadeira"></td>
                   <td class="mesaDisponivel">
-                     <button class="btn-mesa" onclick="escolherMesa('Mesa3')">Mesa 3</button>
+                     <a class="btn-mesa" onclick="escolherMesa(3)">Mesa 3</a>
                   </td>
                   <td class="cadeira"></td>
                   <td></td>
@@ -208,18 +239,33 @@ session_start();
                   <div id="square" class="mesaOcupada"></div>
                   <p>Ocupado</p>
                </div>
-               <div id="escolhaData">
+               <div id="Data">
 
                </div>
-               <div id="escolhaHora">
-
+               <div id="Hora">
+                  <p>Horários disponíveis</p>
+                  <select name="selectHora" id="selectHora" onchange="definirHora()">
+                     <option value="none"></option>
+                     <option value="09:00">09:00</option>
+                     <option value="10:00">10:00</option>
+                     <option value="11:00">11:00</option>
+                     <option value="12:00">12:00</option>
+                     <option value="13:00">13:00</option>
+                     <option value="14:00">14:00</option>
+                     <option value="15:00">15:00</option>
+                     <option value="16:00">16:00</option>
+                     <option value="17:00">17:00</option>                                     
+                  </select>
                </div>
-               <div></div>
-               <div></div>
+               <div id="mesaSelecionada-panel">
+                  <h3>Mesa selecionada</h3>
+                  <p id="mesaSelecionada">Nenhuma mesa selecionada</p>
+               </div>
+               <div id="confirmarReserva-panel">
+                  <button type="submit">Confirmar Reserva</button>
+               </div>
             </div>
 
-           
-               
          </form>
       </div>
 
