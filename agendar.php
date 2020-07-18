@@ -9,6 +9,7 @@ session_start();
       <title>Agende seu Horário</title>
       <link rel="shortcut icon" type="image/png" href="css/img/logo/logoRest.png">
       <link rel="stylesheet" href="css/agendar.css">
+      <link rel="stylesheet" href="css/header.css">
 
       <script src="libs/jquery-3.4.1.js"></script>
       <script>
@@ -86,20 +87,8 @@ session_start();
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-               </tr>
-               <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td class="cadeira"></td>
+                  <td class="cadeira"></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -110,8 +99,21 @@ session_start();
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td class="mesaDisponivel" colspan="2">
+                     <button class="btn-mesa" onclick="escolherMesa('Mesa3')">Mesa 3</button>
+                  </td>
                   <td></td>
                   <td></td>
+                  <td></td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="cadeira"></td>
+                  <td class="cadeira"></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -156,12 +158,16 @@ session_start();
                <tr> <!-- Mesa 2 e 3 estão nesta linha -->
                   <td></td>
                   <td class="cadeira"></td>
-                  <td class="mesa">Mesa 2</td>
+                  <td class="mesaDisponivel">
+                     <button class="btn-mesa" onclick="escolherMesa('Mesa2')">Mesa 2</button>
+                  </td>
                   <td class="cadeira"></td>
                   <td></td>
                   <td></td>
                   <td class="cadeira"></td>
-                  <td class="mesa">Mesa 3</td>
+                  <td class="mesaDisponivel">
+                     <button class="btn-mesa" onclick="escolherMesa('Mesa3')">Mesa 3</button>
+                  </td>
                   <td class="cadeira"></td>
                   <td></td>
                </tr>
@@ -192,16 +198,28 @@ session_start();
             </table>
    
             <div class="legendaMenu">
-               <div class="legendas">
-                  <div id="square" class="mesa"></div>
-                  <p>Mesas</p>
+
+               <div id="legendaTitle">Legendas</div>
+               <div>
+                  <div id="square" class="mesaDisponivel"></div>
+                  <p>Disponivel</p>
                </div>
-   
-               <div class="legendas">
-                  <div id="square" class="cadeira"></div>
-                  <p>Acentos</p>
+               <div>
+                  <div id="square" class="mesaOcupada"></div>
+                  <p>Ocupado</p>
                </div>
+               <div id="escolhaData">
+
+               </div>
+               <div id="escolhaHora">
+
+               </div>
+               <div></div>
+               <div></div>
             </div>
+
+           
+               
          </form>
       </div>
 

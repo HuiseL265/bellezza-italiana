@@ -13,11 +13,11 @@
 
 @font-face{
     font-family: "NotoSansTC-Regular";
-    src: url("Fontes/Fonte/NotoSansTC-Regular.otf")
+    src: url("Fontes/NotoSans/NotoSansTC-Regular.otf")
 }
 @font-face{
     font-family: "NotoSansTC-Bold";
-    src: url("Fontes/Fonte/NotoSansTC-Bold.otf")
+    src: url("Fontes/NotoSans/NotoSansTC-Bold.otf")
 }
 
 body{
@@ -25,88 +25,6 @@ body{
     background-color:rgba(66, 51, 51,0.9);
     text-decoration: none;
 }
-
-#header{
-    background-color: #2e2e2e;
-    width: auto;
-    height: 82px;
-    border-radius: 5px 5px;
-    text-align: center;
-}
-#header img{
-    margin-left: 20px;
-}
-
-#header-container{
-    display: flex;
-    justify-content: space-between;
-    color: black;
-    align-items: center;
-}
-
-#header-container li a h1{
-    font-size: 18px;
-    color: #E58169;
-    width: 200px;
-    height: 25px;
-    
-}
-
-#header-container li a h1:hover{
-    color:#ffffff;
-}
-
-#form-login{
-    width: 450px;
-    height: 82px;
-    display: flex;
-    align-items: center;
-    
-}
-
-#form-login input[type=email]{
-    width: 120px;
-    height: 30px;
-    border-radius: 10px;
-    font-size: 16px;
-    color: black;
-   
-}
-
-#form-login input[type=password]{
-    width: 120px;
-    height: 30px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-family: "NotoSansTC-Bold";
-    
-}
-
-#form-login input[type=submit]{
-    width: 90px;
-    height: 30px;
-    border-radius: 5px;
-    background:#E58169;
-    font-size: 16px;
-    font-family:"NotoSansTC-Bold";
-    border-color:#E58169;
-    text-align: center;
-    
-}
-#form-login input[type=submit]:hover{
-    width: 90px;
-    height: 30px;
-    border-radius: 5px;
-    background:#f3f3f3;
-    font-size: 16px;
-    font-family:"NotoSansTC-Bold";
-    border-color:#E58169;
-    text-align: center;
-    cursor: pointer;
-    color:#E58169;
-}
-
-
 
 #central{
     display: flex;
@@ -120,16 +38,6 @@ body{
     height: 700px;
 
 }
-#registrar{
-    width: 600px;
-    height: 700px;
-    margin-right: 200px;
-
-}
-
-
-
-
 
 /* CODIGO DO ALANZINHO */
 
@@ -199,69 +107,7 @@ a{
         cursor: pointer;
    
     }
-    
-/* css do usuarioLogado */
-#usuario{
-    width:200px;
-    height:82px;
-    display: flex;
-}
-    #container-foto{
-        width:60px;
-        height:auto;
-        margin-top: 1px;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    }
 
-    #usuario #fotoUsuario, #fotoUsuario img{
-        width:45px;
-        height:45px;
-        margin:0;
-    }
-
-    #usuario #fotoUsuario{
-        box-shadow: 2px 2px 4px rgba(168, 58, 7, 0.5);
-    }
-
-        #usuario #fotoUsuario{
-            width:45px;
-            height:45px;
-            border-radius: 50px;
-            background-color:rgb(61, 54, 46);
-        }
-
-    #info-usuario{
-        padding-top:20px;
-        line-height:20px;
-        justify-content: center;
-        height:inherit;
-    }
-
-    #info-usuario{
-        width:140px;
-        height: auto;
-        margin-top: 5px;
-    }
-
-    #info-usuario,#info-usuario a{
-        text-align:right;
-    }
-
-    .sair{
-        height: 20px;
-        float: right;;
-    }
-
-        #info-usuario a{
-            width: 30px;
-            font-size:13px;
-        }
-
-        #info-usuario p{
-            color:white;
-        }
 /* css do menu */
 
 #container-menu form{
@@ -288,32 +134,83 @@ a{
         background-color:white;
     }
 
-#container-menu .mesa{
+    .btn-mesa{
+        width:inherit;
+        height:inherit;
+        background-color:transparent;
+        border-color:transparent;
+    }
+
+    .btn-mesa:hover{
+        cursor:pointer;
+    }
+
+#container-menu .mesaDisponivel{
     text-align:center;
-    background-color:#E58169;
+    background-color:#69e584;
+}
+
+#container-menu .mesaOcupada{
+    background-color:#bb5a5a;
 }
 
 #container-menu .cadeira{
-    background-color:#5f6161;
+    background-color:#646464;
 }
 
 .legendaMenu{
     float:right;
     width:226px;
-    height:200px;
+    height:480px;
 
-    display:flex;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 100px 150px 1fr 1fr;
+    gap:1px;
+    grid-template-areas:
+        "legendaTitle legendaTitle"
+        "legendaMesa legendaCad"
+        "escolhaData escolhaData"
+        "escolhaHora escolhaHora";
 }
+    .legendaMenu #legendaTitle{
+        text-align:center;
+        grid-area: legendaTitle;
+    }
+
+    .legendaMenu .mesa{
+        grid-area:legendaMesa;
+    }
+
+    .legendaMenu .cadeira{
+        grid-area:legendaCad;
+    }
+    
+    .legendaMenu #escolhaData{
+        grid-area: escolhaData;
+    }
+
+    .legendaMenu #escolhaHora{
+        grid-area: escolhaHora;
+    }
+
+    .legendaMenu div{
+        background-color:rgba(105, 229, 177,0.3);
+
+    }
+
     .legendaMenu p{
         color: white;
         text-align:center;
     }
+    
 #square{
     width:50px;
     height:50px;
     border:1px solid white;
 
     margin:10px auto;
+<<<<<<< HEAD
 }
 
 .legendas{
@@ -324,4 +221,6 @@ a{
 
 .borda{
     border: solid 10px blue;
+=======
+>>>>>>> 58fad9730a137a1ef1bed4920fc96e43b43c97fc
 }
