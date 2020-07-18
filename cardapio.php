@@ -99,7 +99,7 @@ session_start();
                     <article>
                         <h1>Título</h1>
                         <label for="p1">
-                        <img src="php/img/pratos/taco.jpg" width="300px" height="200px" alt="">
+                        <img src="css/img/cardapio/pratos/taco.jpg" width="300px" height="200px" alt="">
                         </label>
                         <input type="checkbox" id="p1" name="prato[]" value="taco">
                         <h3>Descrição comida</h3>
@@ -108,7 +108,7 @@ session_start();
                      <article>
                         <h1>Título</h1>
                         <label for="p2">
-                        <img src="php/img/pratos/sushi.jpg" width="300px" height="200px" alt="">
+                        <img src="css/img/cardapio/pratos/sushi.jpg" width="300px" height="200px" alt="">
                         </label>
                         <input type="checkbox" id="p2" name="prato[]" value="sushi">
                         <h3>Descrição comida</h3>
