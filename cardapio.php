@@ -31,6 +31,13 @@ session_start();
                }
             }
             });
+
+            $(document).ready(function(e){
+               $('label').click(function(f){
+                  $(this).toggleClass("borda");
+                  console.log(this);
+               })
+            })
       </script>
    </head>
 
@@ -89,18 +96,23 @@ session_start();
             <form action="php/pratoEscolhido.php" method="post">
                 <div class="pratos">
         
-                    <label for="p1">
+                    <article>
                         <h1>Título</h1>
-                        <img src="php/img/cardapio/pratos/taco.jpg" width="300px" height="200px" alt="">
+                        <label for="p1">
+                        <img src="css/img/cardapio/pratos/taco.jpg" width="300px" height="200px" alt="">
+                        </label>
                         <input type="checkbox" id="p1" name="prato[]" value="taco">
                         <h3>Descrição comida</h3>
-                     </label>
-                     <label for="p2">
+                     </article>
+                     
+                     <article>
                         <h1>Título</h1>
-                        <img src="php/img/cardapio/pratos/sushi.jpg" width="300px" height="200px" alt="">
+                        <label for="p2">
+                        <img src="css/img/cardapio/pratos/sushi.jpg" width="300px" height="200px" alt="">
+                        </label>
                         <input type="checkbox" id="p2" name="prato[]" value="sushi">
                         <h3>Descrição comida</h3>
-                    </label>
+                    </article>
                     
                 </div>
         
