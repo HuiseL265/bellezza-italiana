@@ -13,6 +13,13 @@ session_start();
 
       <script src="libs/jquery-3.4.1.js"></script>
       <script>
+
+         $(document).ready(function() {
+            $('#confirmarReserva-panel button').hide();
+            $('#mesaSelecionada-panel h3').hide();
+            $('#mesaSelecionada-panel p').hide();
+         });
+
             $.ajax({
   				url: 'php/verificar_login.php',
   				success: function(data) {
@@ -28,15 +35,27 @@ session_start();
             }
             });
 
-            function escolherMesa(numMesa){
-               $.ajax({
-                  url: 'php/verificarMesa.php',
-               success: function(data) {
-                  alert(data);
+            
+
+            function definirHora(){
+               hora = $('#selectHora').val();
+               //reseta os valores e esconde o botão confirmar
+               $('#confirmarReserva-panel button').hide();
+               $("#mesaSelecionada").html("Nenhuma mesa selecionada");
+
+               //toggle da mesa escolhida
+               if(hora != "none"){
+                  $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').show();
+               }else{
+                  $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').hide();
                }
-               });
-               
-               $("#mesaSelecionada").html(numMesa);
+            }
+         
+            function escolherMesa(numMesa){
+               if(hora != "none"){
+                  $("#mesaSelecionada").html(numMesa);
+                  $('#confirmarReserva-panel button').show();
+               }               
             }
 
       </script>
@@ -224,18 +243,27 @@ session_start();
 
                </div>
                <div id="Hora">
-                  <select name="selectHora" id="selectHora">
+                  <p>Horários disponíveis</p>
+                  <select name="selectHora" id="selectHora" onchange="definirHora()">
                      <option value="none"></option>
                      <option value="09:00">09:00</option>
-                     <option value="volvo">Volvo</option>
-                     <option value="volvo">Volvo</option>
+                     <option value="10:00">10:00</option>
+                     <option value="11:00">11:00</option>
+                     <option value="12:00">12:00</option>
+                     <option value="13:00">13:00</option>
+                     <option value="14:00">14:00</option>
+                     <option value="15:00">15:00</option>
+                     <option value="16:00">16:00</option>
+                     <option value="17:00">17:00</option>                                     
                   </select>
                </div>
                <div id="mesaSelecionada-panel">
-                  <h3>Mesa Selecionada</h3>
-                  <p id="mesaSelecionada">None</p>
+                  <h3>Mesa selecionada</h3>
+                  <p id="mesaSelecionada">Nenhuma mesa selecionada</p>
                </div>
-               <div></div>
+               <div id="confirmarReserva-panel">
+                  <button type="submit">Confirmar Reserva</button>
+               </div>
             </div>
 
          </form>

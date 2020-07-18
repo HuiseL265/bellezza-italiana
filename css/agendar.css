@@ -171,15 +171,27 @@ a{
 
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 30px 100px 150px 80px 1fr;
+    grid-template-rows: 30px 100px 150px 80px 1fr 1fr;
     gap:1px;
     grid-template-areas:
         "legendaTitle legendaTitle"
         "legendaMesa legendaCad"
         "Data Data"
         "Hora Hora"
-        "mesaSelecionada-panel mesaSelecionada-panel";
+        "mesaSelecionada-panel mesaSelecionada-panel"
+        "confirmarReserva-panel confirmarReserva-panel";
 }
+
+    .legendaMenu div{
+        /*background-color:rgba(168, 170, 169, 0.3);*/
+
+    }
+
+    .legendaMenu p{
+        color: white;
+        text-align:center;
+    }
+
     .legendaMenu #legendaTitle{
         color: white;
         text-align:center;
@@ -200,13 +212,15 @@ a{
 
     .legendaMenu #Hora{
         grid-area: Hora;
-        display:flex;
+        display:grid;
+        grid-template-rows: 1fr 1fr;
         justify-content:center;
         align-items:center;
     }
 
         #Hora #selectHora{
-            text-align:center;
+            align-self: flex-start;
+            justify-self: center;
             width:150px;
             height:25px;
             border-radius: 20px;
@@ -217,23 +231,35 @@ a{
             }
 
     .legendaMenu #mesaSelecionada-panel{
+        font-size: 13px;
         color:rgb(243, 243, 243);
         grid-area:mesaSelecionada-panel;
         text-align:center;
     }
         #mesaSelecionada-panel p{
-            margin-top:10px;
+            font-size:14px;
+            margin-top:5px;
         }
 
-    .legendaMenu div{
-        background-color:rgba(105, 229, 177,0.3);
-
+    .legendaMenu #confirmarReserva-panel{
+        grid-area:confirmarReserva-panel;
+        display:flex;
+        justify-content:center;
+        align-items:center;
     }
+        #confirmarReserva-panel button{
+            width:180px;
+            height:40px;
+            border-radius:10px;
+            border-color:transparent;
+            background-color: #088538;
+            color:white;
+        }
 
-    .legendaMenu p{
-        color: white;
-        text-align:center;
-    }
+            #confirmarReserva-panel button:hover{
+                cursor:pointer;
+                box-shadow:0px 0px 5px rgb(30, 139, 30);
+            }
     
 #square{
     width:50px;
@@ -241,11 +267,4 @@ a{
     border:1px solid white;
 
     margin:10px auto;
-<<<<<<< HEAD
-}
-
-.legendas{
-    width:113px;
-    height:inherit;
-    margin:0px;
 }
