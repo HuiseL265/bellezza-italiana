@@ -10,8 +10,6 @@ var evYR='';
 var evMon='';
 var evDay='';
 var evTime='';
-var delEvNm='';
-var delEvTm='';
 
 function daysInMonth(month,year) {
     return new Date(year, month, 0).getDate();
@@ -57,17 +55,63 @@ $(".back").click(function(){
 	}
 });
 
-
+var anterior = "";
 
 $(".day").click(function(){
 
+
 var Sday=$(this).attr('id');
+
+
+if($(this) != anterior){
+	$(this).css("backgroundColor","green").css("color","white");
+	$(anterior).css("backgroundColor","").css("color","black");
+	anterior = $(this);
+}
+
+$(".horarios").remove();
+
 var y=(Sday.split('/'))[0];
 var m=(Sday.split('/'))[1];
 var d=(Sday.split('/'))[2];
-window.open("?month="+m+"&&year="+y+"&&viewtype="+"day"+"&&day="+d,"_self");
+//alert("ano: "+y+" mês: "+m+" dia: "+d);
+
+$.ajax({
+	url:"./php/calendarphp/verificarHorarios.php?ano="+y+"&&mes="+m+"&&dia="+d,
+	success:function(horaDis){
+		if(horaDis != ""){
+
+			var horarios = (horaDis.split('/'));
+			i=0;
+
+			while(horarios[i] != undefined){
+
+				var txtOption = "<option class=horarios value="+horarios[i]+">"+horarios[i]+"</option>";				
+				
+				$("#selectHora").append(txtOption);
+				i++;
+			}
+		}else{
+			$(".horarios").remove();
+		}
+	}
+});
+//window.open("?month="+m+"&&year="+y+"&&viewtype="+"day"+"&&day="+d,"_self");
 });
 
+$("#selectHora").change(function (){
+	hora = $('#selectHora').val();
+	//reseta os valores e esconde o botão confirmar
+	$('#confirmarReserva-panel button').fadeOut('300');
+	$("#mesaSelecionada").html("Nenhuma mesa selecionada");
+
+	//toggle da mesa escolhida
+	if(hora != "none"){
+	   $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').show('300');
+	}else{
+	   $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').hide('300');
+	}
+ });
 
 
 $(".viewday").click(function(){
@@ -81,42 +125,6 @@ $(".viewmonth").click(function(){
 
 viewtype='month';
 	window.open("?month="+month+"&&year="+year+"&&viewtype="+viewtype+"&&day="+day,"_self");
-
-});
-
-$('.event').click(function(){
-
-	evID=$(this).attr("id");
-	evTmp=evID.split('/');
-	evYR=evTmp[0];
-	evMon=evTmp[1];
-	evDay=((evTmp[2]).split('|'))[0];
-	evTime=((evTmp[2]).split('|'))[1];
-
-	$('.evform').show('200');
-
-});
-
-$('.close').click(function(){
-	$('.evform').hide('200'); $('.evform2').hide('200'); 
-});
-
-$('.submit').click(function(){
-	var evName=$(".evName").val();
-	var rep=$(".rep").find(":selected").attr("value");
-	var obj={
-		name:evName,
-		year:evYR,
-		month:evMon,
-		day:evDay,
-		time:evTime,
-		repeat:rep
-	};
-	$.post('add_event.php',obj,function(ret){
-		alert(ret);
-	window.open("?month="+month+"&&year="+year+"&&viewtype="+viewtype+"&&day="+day,"_self");
-
-	});
 
 });
 

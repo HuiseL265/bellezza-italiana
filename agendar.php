@@ -14,7 +14,7 @@ require('php/calendarphp/getvar.php');
 
       <link rel="stylesheet" type="text/css" href="css/calendar.css">
       <script type="text/javascript" src="libs/jquery.min.js"></script>
-      <script type="text/javascript" src="libs/main.js"></script>
+      <script type="text/javascript" src="libs/agendar.js"></script>
 
       <script src="libs/jquery-3.4.1.js"></script>
       <script>
@@ -40,26 +40,10 @@ require('php/calendarphp/getvar.php');
             }
             });
 
-            
-
-            function definirHora(){
-               hora = $('#selectHora').val();
-               //reseta os valores e esconde o botão confirmar
-               $('#confirmarReserva-panel button').hide();
-               $("#mesaSelecionada").html("Nenhuma mesa selecionada");
-
-               //toggle da mesa escolhida
-               if(hora != "none"){
-                  $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').show();
-               }else{
-                  $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').hide();
-               }
-            }
-         
             function escolherMesa(numMesa){
                if(hora != "none"){
                   $("#mesaSelecionada").html(numMesa);
-                  $('#confirmarReserva-panel button').show();
+                  $('#confirmarReserva-panel button').fadeIn('300');
                }               
             }
 
@@ -249,15 +233,15 @@ require('php/calendarphp/getvar.php');
                <div id="Data">
 
                   <table style="border:2px solid transparent;" class="cal"> <!--calendario bugado -->
-                     <tr>
+                     <tr style="background-color:#464343;">
 
-                     <td><a class="back">Back</a></td>
-                     <td colspan="5" style="text-align:center;">
-                     <?php echo "<span class=MYdiv id=".$month."/".$Year."/".$numDays.">".$day.",".$monthName.", ".$Year."</span>"; 
+                     <td><a class="back"><</a></td>
+                     <td colspan="5" style="text-align:center;color:white;">
+                     <?php echo "<span class=MYdiv id=".$month."/".$Year."/".$numDays.">".$day." / ".$monthName." / ".$Year."</span>"; 
                         echo "<div class='daysel' style='display:none;' id=".$day."></div>";
                      ?>
                      </td>
-                     <td><a class="next">Next</a></td>
+                     <td><a class="next">></a></td>
 
                      </tr>
                      <?php 
@@ -276,17 +260,8 @@ require('php/calendarphp/getvar.php');
 
                <div id="Hora"> <!-- Hora -->
                   <p>Horários disponíveis</p>
-                  <select name="selectHora" id="selectHora" onchange="definirHora()">
-                     <option value="none"></option>
-                     <option value="09:00">09:00</option>
-                     <option value="10:00">10:00</option>
-                     <option value="11:00">11:00</option>
-                     <option value="12:00">12:00</option>
-                     <option value="13:00">13:00</option>
-                     <option value="14:00">14:00</option>
-                     <option value="15:00">15:00</option>
-                     <option value="16:00">16:00</option>
-                     <option value="17:00">17:00</option>                                     
+                  <select name="selectHora" id="selectHora">
+                     <option value="none"></option>                                    
                   </select>
                </div>
                <div id="mesaSelecionada-panel"> <!-- Mesa Selecionada PANEL -->
