@@ -21,7 +21,7 @@ if(($p >= 6 and $_POST['telefone2'] == "") or $p == 7){
     if($senha === $senha2){
         $senha = md5($senha);
             if(mysqli_query($con,
-                "INSERT INTO `tb_clientes`(`cod`, `nome`, `email`,`cpf`, `telefone`, `telefone2`, `senha`)
+                "INSERT INTO `tb_clientes`(`codCliente`, `nome`, `email`,`cpf`, `telefone`, `telefone2`, `senha`)
                  VALUES (NULL, '$nome', '$email','$cpf', '$telefone', '$telefone2', '$senha');")){
                     echo "<br>Cadastro Realizado!";
                     header("location:../home");

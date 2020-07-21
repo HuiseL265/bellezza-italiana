@@ -2,8 +2,19 @@
     require('connect.php');
     $comidas = mysqli_query($con,"Select * from `tb_pratos`");
 
-    
     if (isset($_POST['prato'])) {
+      $prato =$_POST['prato'];
+
+      foreach ($prato as $key => $value) {
+                                                                                      //Número para teste
+           mysqli_query($con,"INSERT INTO `tb_pratopedido`(`idReserva`, `idComida`) VALUES (4,$value)");
+        }
+    }else {
+      echo 'Nenhum prato escolhido';
+    }
+
+    
+    /*if (isset($_POST['prato'])) {
     $pratos =$_POST['prato'];
 
     if(count($pratos) == 1){
@@ -23,5 +34,5 @@
         
     }else {
         echo 'Nenhum prato escolhido';
-    }
+    }*/
 ?>

@@ -91,19 +91,19 @@
     //realiza a inserção de dados enquanto houver registros.
     while($cliente = mysqli_fetch_array($clientes)){
         echo "<tr>";
-            echo "<td> $cliente[cod] </td>";                
+            echo "<td> $cliente[codCliente] </td>";                
             echo "<td> $cliente[nome] </td>";
             echo "<td> $cliente[email] </td>";
             echo "<td> $cliente[cpf] </td>";
             echo "<td> $cliente[telefone] </td>";
             echo "<td> $cliente[telefone2] </td>";    
             echo "<td>
-                    <a href=alterar.php?cod=$cliente[cod]>
+                    <a href=alterar.php?cod=$cliente[codCliente]>
                         <img src=img/edit.png>
                     </a>
                  </td>";
             echo "<td>
-                 <a href=javascript:confirmar($cliente[cod])>
+                 <a href=javascript:confirmar($cliente[codCliente])>
                      <img src=img/erase.png>
                  </a>
               </td>";

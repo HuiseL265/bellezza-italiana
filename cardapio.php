@@ -105,7 +105,7 @@ session_start();
                         <label for="p1">
                         <img src="css/img/cardapio/pratos/taco.jpg" alt="">
                         </label>
-                        <input type="checkbox" id="p1" name="prato[]" value="taco">
+                        <input type="checkbox" id="p1" name="prato[]" value="1">
                         <h3>Descrição comida</h3>
                      </article>
                      
@@ -114,7 +114,7 @@ session_start();
                         <label for="p2">
                         <img src="css/img/cardapio/pratos/sushi.jpg" alt="">
                         </label>
-                        <input type="checkbox" id="p2" name="prato[]" value="sushi">
+                        <input type="checkbox" id="p2" name="prato[]" value="2">
                         <h3>Descrição comida</h3>
                     </article>
                     

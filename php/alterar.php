@@ -8,7 +8,7 @@
 <?php
 require('connect.php');
 $cod = $_GET['cod'];
-$usuariosAlt = mysqli_query($con, "SELECT * FROM `tb_clientes` WHERE `cod` = '$cod'");
+$usuariosAlt = mysqli_query($con, "SELECT * FROM `tb_clientes` WHERE `codCliente` = '$cod'");
 $clienteAlt = mysqli_fetch_array($usuariosAlt);
 ?>
 

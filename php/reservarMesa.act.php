@@ -69,18 +69,18 @@ if(mysqli_num_rows($mesaSolicitada) > 0){
         $usuario = mysqli_fetch_array($usuario);
 
         //Pega o cod e o nome do cliente
-        $clienteID = $usuario['cod'];
+        $clienteID = $usuario['codCliente'];
         $nomeCliente = $usuario['nome'];
 
         
-        $haReservas = mysqli_query($con, "SELECT * FROM `tb_reserva` WHERE `clienteID` = $clienteID AND `status` = 'Pendente'");
+        $haReservas = mysqli_query($con, "SELECT * FROM `tb_reserva` WHERE `codCliente` = $clienteID AND `status` = 'Pendente'");
         //Verifica se o usuário já tem uma reserva "Pendente"
         if(mysqli_num_rows($haReservas) > 0){
             echo("<br>O usuário em questão já tem uma reserva pendente");
             exit;
         }
 
-        if(mysqli_query($con, "INSERT INTO `tb_reserva`(`IdMesa`, `clienteID`, `nomeCliente`, `hora`, `data`, `status`)
+        if(mysqli_query($con, "INSERT INTO `tb_reserva`(`IdMesa`, `codCliente`, `nomeCliente`, `hora`, `data`, `status`)
                                  VALUES ($IdMesa,'$clienteID','$nomeCliente','$hora','$data','Pendente')")){
                                      header('location:../agendar');
                             echo "<br>Mesa reservada com sucesso!";
