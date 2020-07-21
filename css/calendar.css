@@ -14,7 +14,7 @@
 .cal tr:nth-child(even){background-color: #f2f2f2}
 
 .day:hover{
-	background-color: #ebc7be;
+	background-color: #464343;
 	color: white;
 	}
 

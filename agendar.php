@@ -23,6 +23,7 @@ require('php/calendarphp/getvar.php');
             $('#confirmarReserva-panel button').hide();
             $('#mesaSelecionada-panel h3').hide();
             $('#mesaSelecionada-panel p').hide();
+            $('#Hora p, #selectHora').hide();
          });
 
             $.ajax({
@@ -122,7 +123,7 @@ require('php/calendarphp/getvar.php');
                   <td></td>
                   <td></td>
                   <td class="mesaDisponivel" colspan="2">
-                     <a href="javascript:escolherMesa(1)" class="btn-mesa">Mesa 1</a>
+                     <a href="javascript:escolherMesa(1)" class="btn-mesa" id="Mesa1">Mesa 1</a>
                   </td>
                   <td></td>
                   <td></td>
@@ -181,14 +182,14 @@ require('php/calendarphp/getvar.php');
                   <td></td>
                   <td class="cadeira"></td>
                   <td class="mesaDisponivel">
-                     <a class="btn-mesa" onclick="escolherMesa(2)">Mesa 2</a>
+                     <a class="btn-mesa" onclick="escolherMesa(2)" id="Mesa2">Mesa 2</a>
                   </td>
                   <td class="cadeira"></td>
                   <td></td>
                   <td></td>
                   <td class="cadeira"></td>
                   <td class="mesaDisponivel">
-                     <a class="btn-mesa" onclick="escolherMesa(3)">Mesa 3</a>
+                     <a class="btn-mesa" onclick="escolherMesa(3)" id="Mesa3">Mesa 3</a>
                   </td>
                   <td class="cadeira"></td>
                   <td></td>
@@ -227,7 +228,7 @@ require('php/calendarphp/getvar.php');
                   <p>Disponivel</p>
                </div>
                <div>
-                  <div id="square" class="mesaOcupada"></div>
+                  <div id="square" style="background-color:#bb5a5a"></div>
                   <p>Ocupado</p>
                </div>
                <div id="Data">
