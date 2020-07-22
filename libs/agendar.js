@@ -69,6 +69,9 @@ $(".day").click(function(){
 	$('#dataforphp').val(Sday);
 
 	$('#Hora p, #selectHora').show(300);
+	$('#confirmarReserva-panel button').hide(200);
+    $('#mesaSelecionada-panel h3').hide(200);
+    $('#mesaSelecionada-panel input').hide(200);
 
 	if($(this) != anterior){
 		$(this).css("backgroundColor","green").css("color","white");

@@ -254,6 +254,7 @@ require('php/calendarphp/getvar.php');
                   <p>Ocupado</p>
                </div>
                <div id="Data">
+                  <h4 style="color:white;text-align:center;">Selecione a data</h4>
 
                   <table style="border:2px solid transparent;" class="cal"> <!--calendario bugado -->
                      <tr style="background-color:#464343;">

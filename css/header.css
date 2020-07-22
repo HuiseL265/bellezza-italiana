@@ -137,7 +137,11 @@
         #info-usuario a{
             width: 30px;
             font-size:13px;
+            color:gray;
         }
+            #info-usuario a:hover{
+                color:white;
+            }
 
         #info-usuario p{
             color:white;

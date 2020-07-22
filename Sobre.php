@@ -1,10 +1,88 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="pt-br">
    <head>
       <meta charset="UTF-8">
-      <link rel="stylesheet" href="css/sobre.css">
+	  <link rel="stylesheet" href="css/sobre.css">
+	  <link rel="shortcut icon" type="image/png" href="css/img/logo/logoRest.png">
+      <link rel="stylesheet" href="css/header.css">
+
+      <script src="libs/jquery-3.4.1.js"></script>
+      <script>
+          $.ajax({
+  				url: 'php/verificar_login.php',
+  				success: function(data) {
+               console.log(data);
+               if(data == "Logado"){
+                  $('#form-login').hide();
+                  $('#usuario').show();
+                  $('#reservar').show();
+               }
+               if(data == "NaoLogado"){
+                  $('#usuario').hide();
+                  $('#reservar').hide();
+                  $('#form-login').show();
+               }
+            }
+            });
+
+        </script>
    </head>
    <body>
+
+   <header id="header" style="display:flex;">
+         <a href="#"><img src="css/img/logo/logoRest.png" alt="logo" height="80px"></a>
+
+          <ul id="header-container"">
+             <li><a href="home.php"><h1>Home</h1></a></li>
+             <li><a href="Sobre.php"><h1>Sobre</h1></a></li>
+             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
+             <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
+
+              <!--logado-->
+              <div id="usuario">
+                   <div id="info-usuario">
+                      <p id="nome"><?php echo $_SESSION['nomeUsuario'] ?></p>
+                      <div class="sair"><a href="php/sair.php">Sair</a></div>
+                      
+                   </div>
+                   <div id="container-foto">
+                      <div id="fotoUsuario">
+                         <img src="./css/img/usuarioIcon/user1.png" alt="userIcon">
+                      </div>
+                   </div>
+                </div>
+
+                <!--não logado-->             
+             <form id="form-login" method="post" action="php/logar.act.php" onsubmit="javascript:Logar()">
+               <input type="email" id="emailLogin" name="email" placeholder="Login" required="required">
+               <input type="password" id="senhaLogin" name="senha" placeholder="Senha" required="required">
+               <button>LOGAR</button>
+            </ul>
+
+               <?php
+                if(isset($_SESSION['usuario_invalido'])){
+               ?>
+                <p>Email e/ou senha invalidos</p>
+               <?php
+                    };
+                    unset($_SESSION['usuario_invalido']);
+               ?>
+
+               <?php
+                    if(isset($_SESSION['campo_vazio'])){
+               ?>
+                <p>Preencha todos os campos</p>
+
+               <?php
+                    };
+                    unset($_SESSION['campo_vazio']);
+               ?>
+
+             </form>
+      </header>
       
       <!-- Meu codigo -->
       
@@ -40,7 +118,7 @@
       		<div class="Avaliadores">
         	<table>
         		<td ><img class="FotoAvali" src="css/img/usuarioIcon/Jacan.jpg"></td>
-        		<td ><h2>Érick Jacquin</h2><br><p>Avaliação de:<br>Comida: <img class="Estrelas" srccss/img/icon/4estrelas.png"><br><p>Local :<img class="Estrelas" src="css/img/icon/3estrelas.png"><br><p>Atendimento: <img class="Estrelas" src="css/img/icon/4estrelas.png"></p></td>
+        		<td ><h2>Érick Jacquin</h2><br><p>Avaliação de:<br>Comida: <img class="Estrelas" src="css/img/icon/4estrelas.png"><br><p>Local :<img class="Estrelas" src="css/img/icon/3estrelas.png"><br><p>Atendimento: <img class="Estrelas" src="css/img/icon/4estrelas.png"></p></td>
         		<tr>
         		<td><img class="FotoAvali" src="css/img/usuarioIcon/Fogaça.jpg"></td>
          		<td><h2>Henrique Fogaça</h2><br><p>Avaliação de: <br>Comida: <img class="Estrelas" src="css/img/icon/4estrelas.png"><br>Local :<img class="Estrelas" src="css/img/icon/4estrelas.png"><br>Atendimento: <img class="Estrelas" src="css/img/icon/4estrelas.png"></p></td>
