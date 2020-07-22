@@ -9,7 +9,7 @@ body{
     margin:40px auto;
     display:grid;
     grid-template-columns: 20% 1fr;
-    grid-template-areas: "perfilUsuario" "reservasUsuario";
+    grid-template-areas: "perfilUsuario" "reserva-container";
 }
 
 #perfilUsuario{
@@ -19,18 +19,41 @@ body{
     grid-template-rows: 120px 20px 40px;
     justify-content:center;
 }
+#perfilUsuario p{
+    text-align:center;
+}
     #fotoPerfil{
         width:100px;
         height:100px;
         border-radius:100px;
         background-color:#2e2e2e;
+        margin:0 auto;
+        justify-self:center;
+        align-self:center;
+        box-shadow:0px 0px 4px black;
     }
 
     #emailUsuario{
         font-size:12px;
-        color:rgba(255, 255, 255, 0.733);
+        color:rgba(255, 255, 255, 0.548);
     }
 
-#reservaUsuario{
+#reserva-container{
     background-color:rgba(104, 105, 194, 0.5);
+    border-left:2px groove white;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 30% 1fr;
+    grid-template-areas: "reservaUsuario reservaUsuario reservaUsuario";
+    grid-area: "prato1 prato2 prato3"
 }
+    #reservaUsuario{
+        width:80%;
+        height:100px;
+        background-color:#c4c4c4;
+        grid-area:reservaUsuario;
+        align-self:center;
+        justify-self: center;
+        border-radius:10px;
+        box-shadow:0px 2px 2px black;
+    }

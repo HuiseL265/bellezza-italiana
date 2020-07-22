@@ -99,12 +99,12 @@
             echo "<td> $cliente[telefone2] </td>";    
             echo "<td>
                     <a href=alterar.php?cod=$cliente[codCliente]>
-                        <img src=img/edit.png>
+                        <img src=../css/img/backend_img/edit.png>
                     </a>
                  </td>";
             echo "<td>
                  <a href=javascript:confirmar($cliente[codCliente])>
-                     <img src=img/erase.png>
+                     <img src=../css/img/backend_img/erase.png>
                  </a>
               </td>";
             echo "</tr>";

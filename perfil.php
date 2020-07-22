@@ -78,12 +78,13 @@ $.ajax({
          <div id="perfilUsuario">
              <div id="fotoPerfil"></div>
              <p id="emailUsuario"><?php echo $_SESSION['email']?></p>
-             <p id="nomeUsuario"><?php echo $_SESSION['nomeUsuario']?></p>
-             
+             <p id="nomeUsuario"><?php echo $_SESSION['nomeUsuario']?></p>   
          </div>
 
-         <div id="reservaUsuario">
+         <div id="reserva-container">
+            <div id="reservaUsuario">
 
+            </div>
          </div>
      </div>
 
