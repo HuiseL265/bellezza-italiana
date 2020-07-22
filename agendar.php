@@ -15,6 +15,7 @@ require('php/calendarphp/getvar.php');
       <link rel="stylesheet" type="text/css" href="css/calendar.css">
       <script type="text/javascript" src="libs/jquery.min.js"></script>
       <script type="text/javascript" src="libs/agendar.js"></script>
+      <script type="text/javascript" src="libs/verificarCadastro.js"></script>
 
       <script src="libs/jquery-3.4.1.js"></script>
       <script>
@@ -22,8 +23,28 @@ require('php/calendarphp/getvar.php');
          $(document).ready(function() {
             $('#confirmarReserva-panel button').hide();
             $('#mesaSelecionada-panel h3').hide();
-            $('#mesaSelecionada-panel p').hide();
+            $('#mesaSelecionada-panel input').hide();
             $('#Hora p, #selectHora').hide();
+
+            var url = window.location.href;
+            var msg = url.split('=')[1];
+
+
+            switch(msg){
+               case '1':
+                  alert("Mesa reservada com sucesso!");
+               break;
+               case '2':
+                  alert("Você já possui uma reserva pendente");
+               break;
+               case '3':
+                  alert("Erro ao reservar mesa. Por favor, contate-nos em um de nossos canais para resolver o problema");
+               break;
+
+               default:
+                  break;
+            }
+
          });
 
             $.ajax({
@@ -43,7 +64,7 @@ require('php/calendarphp/getvar.php');
 
             function escolherMesa(numMesa){
                if(hora != "none"){
-                  $("#mesaSelecionada").html(numMesa);
+                  $("#mesaSelecionada").val(numMesa);
                   $('#confirmarReserva-panel button').fadeIn('300');
                }               
             }
@@ -90,7 +111,7 @@ require('php/calendarphp/getvar.php');
       </header>
 
       <div id="container-menu">
-         <form action="" method="post">
+         <form action="./php/reservarMesa.act.php" method="post">
 
             <table class="table-mesas"> <!-- Tabela das mesas -->
                <tr>
@@ -244,6 +265,8 @@ require('php/calendarphp/getvar.php');
                      </td>
                      <td><a class="next">></a></td>
 
+                     <input type="hidden" name="data" value="" id="dataforphp">
+
                      </tr>
                      <?php 
                      echo "<div class='viewtype' id=".$viewtype." style='display:none;'></div>";
@@ -267,7 +290,7 @@ require('php/calendarphp/getvar.php');
                </div>
                <div id="mesaSelecionada-panel"> <!-- Mesa Selecionada PANEL -->
                   <h3>Mesa selecionada</h3>
-                  <p id="mesaSelecionada">Nenhuma mesa selecionada</p>
+                  <input id="mesaSelecionada" name="IdMesa" readonly="readonly" value="Nenhuma mesa selecionada"/>
                </div>
                <div id="confirmarReserva-panel"> <!-- Confirmação da Reserva -->
                   <button type="submit">Confirmar Reserva</button>

@@ -66,6 +66,8 @@ $(".day").click(function(){
 
 	var Sday=$(this).attr('id');
 
+	$('#dataforphp').val(Sday);
+
 	$('#Hora p, #selectHora').show(300);
 
 	if($(this) != anterior){
@@ -106,6 +108,8 @@ $(".day").click(function(){
 			}else{
 				$(".horarios").remove();
 			}
+
+
 		}
 	});
 //window.open("?month="+m+"&&year="+y+"&&viewtype="+"day"+"&&day="+d,"_self");
@@ -123,15 +127,14 @@ $("#selectHora").change(function (){
 			success:function(horaDis){
 				if(horaDis != ""){
 	
-	
 					var horarios = horaDis.split('.')[0];
 					var mesas = horaDis.split('.')[1];
 	
 					mesas = (mesas.split('/'));
 					horarios = (horarios.split('/'));
 
-					alert(mesas.length);
-					alert(horarios.length);
+					//alert(mesas.length);
+					//alert(horarios.length);
 	
 					if(horarios.length == mesas.length){
 						for(i = 0; i < horarios.length; i++){
@@ -161,13 +164,13 @@ $("#selectHora").change(function (){
 
 	//reseta os valores e esconde o botão confirmar
 	$('#confirmarReserva-panel button').fadeOut('300');
-	$("#mesaSelecionada").html("Nenhuma mesa selecionada");
+	$("#mesaSelecionada").val("Nenhuma mesa selecionada");
 
 	//toggle da mesa escolhida
-	if(hora != "none"){
-	   $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').show('300');
+	if(hora != "vazia"){
+	   $('#mesaSelecionada-panel h3, #mesaSelecionada-panel input').show('300');
 	}else{
-	   $('#mesaSelecionada-panel h3, #mesaSelecionada-panel p').hide('300');
+	   $('#mesaSelecionada-panel h3, #mesaSelecionada-panel input').hide('300');
 	}
 
 

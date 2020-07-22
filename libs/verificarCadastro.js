@@ -1,3 +1,13 @@
+$(document).ready(function(){
+
+    //var NoLoggedStr = window.urlParam('logged');
+    var url = window.location.href;
+    var NoLoggedStr = url.split('=')[1];
+    
+    if(NoLoggedStr == "false"){
+        alert("Você não está logado, logue para realizar esta ação.");
+    }
+});
 
 function validarSenhas(){
     let senha = document.getElementById("senha").value;

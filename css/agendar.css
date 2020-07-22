@@ -161,7 +161,11 @@ body{
         grid-area:mesaSelecionada-panel;
         text-align:center;
     }
-        #mesaSelecionada-panel p{
+        #mesaSelecionada-panel input{
+            color:white;
+            text-align:center;
+            border:none;
+            background-color:transparent;
             font-size:14px;
             margin-top:5px;
         }
