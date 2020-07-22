@@ -18,6 +18,7 @@ echo "Dados preenchidos ". $p;
 //de campos preenchidos, ele verifica se é o campo opcional 'telefone2'
 if(($p >= 6 and $_POST['telefone2'] == "") or $p == 7){
     //senha e confirmar senha são idênticas?
+    
     if($senha === $senha2){
         $senha = md5($senha);
             if(mysqli_query($con,
@@ -25,6 +26,8 @@ if(($p >= 6 and $_POST['telefone2'] == "") or $p == 7){
                  VALUES (NULL, '$nome', '$email','$cpf', '$telefone', '$telefone2', '$senha');")){
                     echo "<br>Cadastro Realizado!";
                     header("location:../home");
+            }else{
+                echo "erro no cadastro!";
             }
     }else{
         echo "<br>Senhas não correspondem.";

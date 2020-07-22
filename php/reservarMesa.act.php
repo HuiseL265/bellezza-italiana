@@ -11,9 +11,10 @@ $dataHoje = date('d/m/Y');
 
 //extrai os dados da reserva
 extract($_POST);
+//print_r($_POST);
 $IdMesa = $_POST['IdMesa'];
 $data = $_POST['data'];
-$hora = $_POST['hora'];
+$hora = $_POST['selectHora'];
 
 //pegando a hora definida pelo usuário para transformar
 //em um int sem caracteres especiais
@@ -42,8 +43,8 @@ $umaHoraReserva = substr_replace($umaHoraReserva, ':', 2, 0);
 
 //adicionando 1 min a $MenosUmaHoraReserva e
 //subtraindo 1 min da $umaHoraReserva 
-echo $MenosUmaHoraReserva =  date('H:i', strtotime($MenosUmaHoraReserva) + 60);
-echo $umaHoraReserva = date('H:i', strtotime($umaHoraReserva) - 60);
+$MenosUmaHoraReserva =  date('H:i', strtotime($MenosUmaHoraReserva) + 60);
+$umaHoraReserva = date('H:i', strtotime($umaHoraReserva) - 60);
 
 //puxa as mesas dentro do parametro(mesas iguais, datas iguais e 
 //tem que ter espaço para no mínimo uma hora de reserva) 
@@ -54,9 +55,9 @@ $mesaSolicitada = mysqli_query($con,"SELECT * FROM `tb_reserva`
 
 //há uma solicitação no mesmo dia, mesma hora e mesma mesa?
 if(mysqli_num_rows($mesaSolicitada) > 0){
-    echo "<br>Mesa Indisponível";
+    //echo "<br>Mesa Indisponível";
 }else{
-    echo "<br>Mesa Disponível";
+    //echo "<br>Mesa Disponível";
 
     //verifica se o usuário está logado
     if(isset($_SESSION['email'])){
@@ -76,19 +77,25 @@ if(mysqli_num_rows($mesaSolicitada) > 0){
         $haReservas = mysqli_query($con, "SELECT * FROM `tb_reserva` WHERE `codCliente` = $clienteID AND `status` = 'Pendente'");
         //Verifica se o usuário já tem uma reserva "Pendente"
         if(mysqli_num_rows($haReservas) > 0){
-            echo("<br>O usuário em questão já tem uma reserva pendente");
+            $msg = 2;
+            header('location:../agendar?msg='.$msg);
+            //echo("O usuário em questão já tem uma reserva pendente");
             exit;
         }
 
         if(mysqli_query($con, "INSERT INTO `tb_reserva`(`IdMesa`, `codCliente`, `nomeCliente`, `hora`, `data`, `status`)
                                  VALUES ($IdMesa,'$clienteID','$nomeCliente','$hora','$data','Pendente')")){
-                                     header('location:../agendar');
-                            echo "<br>Mesa reservada com sucesso!";
+                                    header('location:../agendar');
+                            $msg = 1;
+                            header('location:../agendar?msg='.$msg);
+                            //echo "<br>Mesa reservada com sucesso!";
                         }else{
-                            echo "<br>Erro ao reservar mesa";
+                            $msg = 3;
+                            header('location:../agendar?msg='.$msg);
+                            //echo "<br>Erro ao reservar mesa";
                         }
     }else{
-        header('location:../home');
+        header('location:../agendar?logged=false');
     }
     
 };
