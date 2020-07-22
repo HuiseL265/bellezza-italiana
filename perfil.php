@@ -16,6 +16,22 @@ session_start();
       <script type="text/javascript" src="libs/jquery.min.js"></script>
 
 <script>
+
+//confirmar exclusão da reservar...
+function confirmar(codigo){
+		opcao = confirm("Deseja realmente cancelar esta reserva?");	
+	if(opcao == true){
+		$.ajax({
+  				url: 'php/excluirReserva.php?codigo='+codigo,
+  				success: function(data) {
+                    alert(data);
+                    location.reload();
+  		        }
+	    });
+	}	
+}
+
+
 $.ajax({
       url: 'php/verificar_login.php',
       success: function(data) {
@@ -76,14 +92,16 @@ $.ajax({
 
      <div class="container">
          <div id="perfilUsuario">
-             <div id="fotoPerfil"></div>
+             <div id="fotoPerfil">
+               <img src="./css/img/usuarioIcon/user1.png" alt="userIcon">
+             </div>
              <p id="emailUsuario"><?php echo $_SESSION['email']?></p>
              <p id="nomeUsuario"><?php echo $_SESSION['nomeUsuario']?></p>   
          </div>
 
          <div id="reserva-container">
             <div id="reservaUsuario">
-
+               <?php include('php/listReservaFrontEnd.php') ?>
             </div>
          </div>
      </div>
