@@ -21,11 +21,13 @@ session_start();
                   $('#registrar').hide();
                   $('#form-login').hide();
                   $('#usuario').show();
+                  $('#reservar').show();
                }
                if(data == "NaoLogado"){
                   $('#usuario').hide();
+                  $('#reservar').hide();
                   $('#form-login').show();
-                  $('#registrar').show();
+                  $('#registrar').show();   
                }
             }
             });
@@ -38,7 +40,7 @@ session_start();
 
           <ul id="header-container">
              <li><a href="home.php"><h1>Home</h1></a></li>
-             <li><a href="Sobre.php"><h1>Sobre</h1></a></li>
+             <li><a href=""><h1>Sobre</h1></a></li>
              <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
 
@@ -133,10 +135,14 @@ session_start();
                </div>
            </form>
          </div>
-      </div>
+
       <div id="reservar">
-      <p>VEJA NOSSO CARDÁPIO E AGENTE SUA MESA</p>   
-      <a href="cardapio"><button></button></a>
+      <h1 style="color:white;">VEJA NOSSO CARDÁPIO E AGENDE SUA MESA</h1>
+      <img src="" alt="">
+      <a href="cardapio.php"><button>CARDÁPIO</button></a>
+      <a href="agendar.php"><button>AGENDAR</button></a>
+      </div>
+
       </div>
 
       <div id="rodape">
