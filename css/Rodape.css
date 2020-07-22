@@ -1,0 +1,69 @@
+@charset "utf-8";
+*{
+	font-family:Arial, Helvetica, sans-serif;
+	padding:0;
+	margin:0;
+}
+
+.FundoFuter{
+	border-top:solid;
+	border-color:goldenrod;
+	border-width:medium;
+	background-color:#333;
+	height:220px;
+	color:#FFF;
+}
+.Contato{
+	width:35%;
+	height:auto;
+	float:left;
+	margin:20px 10% 10px 10px;
+	font-size:12px;
+}
+.Contato h2{
+	color:goldenrod;
+	margin-bottom:10px;
+}
+.Contato p{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.Contato img{
+	height:15px;
+	width:15x;
+}
+.EscolhaFuter{
+	float:left;
+	font-size:12px;
+	margin:20px 10% 10px 10px;
+}
+.EscolhaFuter h2{
+	color:goldenrod;
+	margin-bottom:10px;
+}
+.EscolhaFuter .OpcaoFuter{
+	margin-bottom:10px;
+}
+.EscolhaFuter a{
+	color:#FFF;
+	text-decoration:none;
+}
+.Contact{
+	width:25%;
+	float:right;
+	font-size:12px;
+	margin:20px 30px 10px 10px;
+}
+.Contact h2{
+	color:goldenrod;
+	margin-bottom:10px;
+}
+.Contact .CampoEmail{
+	width:100%;
+	margin-bottom:10px;
+}
+.Contact .CampoTexto{
+	width:100%;
+	height:85px;
+	resize:none;
+}

@@ -4,6 +4,7 @@
     height: 82px;
     border-radius: 5px 5px;
     text-align: center;
+    box-shadow: 2px 2px 10px #2b2a2a;
 }
 #header img{
     margin-left: 20px;

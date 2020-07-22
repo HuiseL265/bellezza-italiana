@@ -11,6 +11,7 @@ require('php/calendarphp/getvar.php');
       <link rel="shortcut icon" type="image/png" href="css/img/logo/logoRest.png">
       <link rel="stylesheet" href="css/agendar.css">
       <link rel="stylesheet" href="css/header.css">
+      <style rel=stylesheet href="css/Rodape.css"></style>
 
       <link rel="stylesheet" type="text/css" href="css/calendar.css">
       <script type="text/javascript" src="libs/jquery.min.js"></script>
@@ -299,6 +300,9 @@ require('php/calendarphp/getvar.php');
 
          </form>
       </div>
+
+      <?php require('Rodape.php');
+      ?>
 
    </body>
 </html>
