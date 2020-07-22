@@ -90,7 +90,7 @@ require('php/calendarphp/getvar.php');
       </header>
 
       <div id="container-menu">
-         <form action="" method="post">
+         <form action="php/reservarMesa.act.php" method="post">
 
             <table class="table-mesas"> <!-- Tabela das mesas -->
                <tr>

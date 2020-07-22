@@ -130,9 +130,9 @@ $("#selectHora").change(function (){
 					mesas = (mesas.split('/'));
 					horarios = (horarios.split('/'));
 
-					alert(mesas.length);
-					alert(horarios.length);
-	
+					//alert(mesas.length);
+					//alert(horarios.length);
+
 					if(horarios.length == mesas.length){
 						for(i = 0; i < horarios.length; i++){
 							
