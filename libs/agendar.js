@@ -135,11 +135,7 @@ $("#selectHora").change(function (){
 
 					//alert(mesas.length);
 					//alert(horarios.length);
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 151474f90b57af365536ba5cdf1c2221fc119118
 					if(horarios.length == mesas.length){
 						for(i = 0; i < horarios.length; i++){
 							
