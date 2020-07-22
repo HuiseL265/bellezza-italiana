@@ -33,6 +33,14 @@ session_start();
             });
 
             $(document).ready(function(e){
+
+               var url = window.location.href;
+               var msgCardapio = url.split('=')[1];
+
+               if(msgCardapio == "success"){
+                  window.location.reload;
+               }
+
                $('article').click(function(f){
                   $(this).toggleClass("borda");
                   console.log(this)
@@ -70,7 +78,7 @@ session_start();
                 </div>
              
              <!--não logado-->
-             <form id="form-login" method="post" action="logar.act.php">
+             <form id="form-login" method="post" action="php/logar.act.php">
                <input type="email" name="email" placeholder="Login" required="required">
                <input type="password" name="senha" placeholder="Senha" required="required">
                <button>LOGAR</button>

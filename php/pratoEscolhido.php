@@ -9,6 +9,7 @@
                                                                                       //Número para teste
            mysqli_query($con,"INSERT INTO `tb_pratopedido`(`idReserva`, `idComida`) VALUES (4,$value)");
         }
+        header('location:../cardapio?success=true');
     }else {
       echo 'Nenhum prato escolhido';
     }
