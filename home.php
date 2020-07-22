@@ -96,7 +96,8 @@ session_start();
                <div class="items">
                <table>
                     <tr>
-                        <td colspan="2"><h2>Cadastro</h2></td>
+                        <td colspan="2" style="border-bottom:2px groove white;"
+                        ><h2>Cadastro</h2></td>
                     </tr>
                        <tr>
                            <td><labeL for="nome">Nome</labeL></td>

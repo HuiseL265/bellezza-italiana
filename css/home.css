@@ -126,8 +126,6 @@ body{
 #registrar{
     width: 600px;
     height: 500px;
-    margin-right: 200px;
-
 }
 #reservar{
     width: 700px;
@@ -156,10 +154,12 @@ font-size: 30px;
 
 /* CODIGO DO ALANZINHO */
 
+
+
 .items{
     float:right;
-    width:340px;
-    min-height:330px;
+    width:380px;
+    height:450px;
     border-radius:10px;
     background-color:rgba(46, 46, 46,0.8);	
 
@@ -168,13 +168,15 @@ font-size: 30px;
     .items table{
         margin:auto;
         border-collapse: separate;
-        border-spacing: 0 5px;
+        border-spacing: 0 10px;
         display:flex;
     }
 
 .items table h2{
     text-align: center;
-    text-shadow: 1.5px 1.5px #964b38;
+    text-shadow: 1.5px 1.5px 3px #51af3f;
+    font-size:45px;
+    text-decoration:line;
 }
 
 tr td:first-child{
