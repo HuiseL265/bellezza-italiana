@@ -1,3 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing:border-box;
+    outline: none;
+    -webkit-user-select: none;
+    outline-style: none;
+    font-family:"NotoSansTC-Bold", "Verdana";
+	text-decoration: none !important;
+	
+	color:rgb(219, 219, 219);
+}
+
+@font-face{
+    font-family: "NotoSansTC-Regular";
+    src: url("Fontes/NotoSans/NotoSansTC-Regular.otf");
+}
+@font-face{
+    font-family: "NotoSansTC-Bold";
+    src: url("Fontes/NotoSans/NotoSansTC-Bold.otf");
+}
+
 #header{
     background-color: #2e2e2e;
     width: auto;

@@ -35,7 +35,7 @@ session_start();
    <header id="header" style="display:flex;">
          <a href="#"><img src="css/img/logo/logoRest.png" alt="logo" height="80px"></a>
 
-          <ul id="header-container"">
+          <ul id="header-container" style="width:100%;">
              <li><a href="home.php"><h1>Home</h1></a></li>
              <li><a href="Sobre.php"><h1>Sobre</h1></a></li>
              <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>

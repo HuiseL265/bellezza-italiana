@@ -40,7 +40,7 @@ session_start();
 
           <ul id="header-container">
              <li><a href="home.php"><h1>Home</h1></a></li>
-             <li><a href="Sobre.php"><h1>Sobre</h1></a></li>
+             <li><a href="sobre.php"><h1>Sobre</h1></a></li>
              <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
 

@@ -6,17 +6,17 @@
     outline: none;
     outline-style: none;
     font-family:"NotoSansTC-Bold";
-    text-decoration: none !important
+    text-decoration: none !important;
 }
 
 
 @font-face{
     font-family: "NotoSansTC-Regular";
-    src: url("Fontes/NotoSans/NotoSansTC-Regular.otf")
+    src: url("Fontes/NotoSans/NotoSansTC-Regular.otf");
 }
 @font-face{
     font-family: "NotoSansTC-Bold";
-    src: url("Fontes/NotoSans/NotoSansTC-Bold.otf")
+    src: url("Fontes/NotoSans/NotoSansTC-Bold.otf");
 }
 
 body{
