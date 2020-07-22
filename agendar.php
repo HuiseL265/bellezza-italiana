@@ -109,6 +109,31 @@ require('php/calendarphp/getvar.php');
                   <input type="submit" value="LOGAR">
                 </form>
                 </ul>
+
+                <?php
+                if(isset($_SESSION['usuario_invalido'])){          
+               ?>
+               <script>
+                  alert("Email e/ou senha invalidos");
+                  location.reload();
+               </script>
+               <?php
+                    };
+                    unset($_SESSION['usuario_invalido']);
+               ?>
+
+               <?php
+                    if(isset($_SESSION['campo_vazio'])){
+               ?>
+               <script>
+                  alert("Preencha todos os campos");
+                  location.reload();
+               </script>
+
+               <?php
+                    };
+                    unset($_SESSION['campo_vazio']);
+               ?>
              </div>
           
       </header>

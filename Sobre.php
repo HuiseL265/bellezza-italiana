@@ -64,10 +64,13 @@ session_start();
                <button>LOGAR</button>
             </ul>
 
-               <?php
-                if(isset($_SESSION['usuario_invalido'])){
+            <?php
+                if(isset($_SESSION['usuario_invalido'])){          
                ?>
-                <p>Email e/ou senha invalidos</p>
+               <script>
+                  alert("Email e/ou senha invalidos");
+                  location.reload();
+               </script>
                <?php
                     };
                     unset($_SESSION['usuario_invalido']);
@@ -76,7 +79,10 @@ session_start();
                <?php
                     if(isset($_SESSION['campo_vazio'])){
                ?>
-                <p>Preencha todos os campos</p>
+               <script>
+                  alert("Preencha todos os campos");
+                  location.reload();
+               </script>
 
                <?php
                     };

@@ -1,9 +1,6 @@
 <?php
     echo "
     <style>
-    *{
-        font-family:verdana;
-    }
     .table td a{
         padding-top:6px;
     }
@@ -40,6 +37,7 @@
     }
 
     .table-res td {
+    font-family:verdana;
     font-size: 14px;
     color: #ffffff;
     line-height: 2.0;
