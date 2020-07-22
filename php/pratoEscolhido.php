@@ -1,8 +1,14 @@
 <?php
+session_start();
     require('connect.php');
+    
     $comidas = mysqli_query($con,"Select * from `tb_pratos`");
 
-    if (isset($_POST['prato'])) {
+    if(!isset($_SESSION['email'])){
+      header('location:../cardapio?success=noLogin');
+    }
+
+    else if (isset($_POST['prato'])) {
       $prato =$_POST['prato'];
 
       foreach ($prato as $key => $value) {

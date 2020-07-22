@@ -37,9 +37,12 @@ session_start();
                var url = window.location.href;
                var msgCardapio = url.split('=')[1];
 
-               if(msgCardapio == "success"){
+               if(msgCardapio == "noLogin"){
+                  alert('É preciso estar logado para fazer o pedido')
+                  
+               }else if(msgCardapio == "true"){
                   window.location.reload;
-               }
+               }else if(msgCardapio == "false" )
 
                $('article').click(function(f){
                   $(this).toggleClass("borda");
@@ -132,5 +135,7 @@ session_start();
             </form>
          
       </div>
+      <?php require('Rodape.php');
+      ?>
    </body>
 </html>
