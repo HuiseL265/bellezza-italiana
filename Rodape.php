@@ -91,7 +91,7 @@
                 	<h2>Opções</h2>
                 	<ul>
                			<li class=OpcaoFuter><a href=home.php><h1>Home</h1></a></li>
-             			<li class=OpcaoFuter><a href=><h1>Sobre</h1></a></li>
+             			<li class=OpcaoFuter><a href=sobre.php><h1>Sobre</h1></a></li>
              			<li class=OpcaoFuter><a href=><h1>Contato</h1></a></li>
                     </ul>
                 

@@ -9,6 +9,7 @@
     }
     .btn-erase img{
         width:15px;
+        margin-top:10px;
     }
 
     .table-res table{
@@ -61,7 +62,7 @@
 
     $id = $_SESSION['codCliente'];
     //echo $id;
-    $reservas = mysqli_query($con, "SELECT * FROM `tb_reserva` WHERE `codCliente` = $id");
+    $reservas = mysqli_query($con, "SELECT * FROM `tb_reserva` WHERE `codCliente` = $id AND `status` = 'Pendente'");
 
     if(mysqli_num_rows($reservas) === 0){
         echo "<h4 style=color:white;>Você não solicitou nenhuma reserva ainda</h4>";
@@ -86,7 +87,7 @@
                 echo "<td> $reserva[nomeCliente] </td>";
                 echo "<td> $reserva[hora] </td>";
                 echo "<td> $reserva[data] </td>";
-                echo "<td> $reserva[status] </td>";    
+                echo "<td id=status> $reserva[status] </td>";    
                 echo "<td>
                      <a class=btn-erase href=javascript:confirmar($reserva[idReserva])>
                          <img src=css/img/backend_img/erase.png>

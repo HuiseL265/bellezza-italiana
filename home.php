@@ -53,7 +53,9 @@ session_start();
                    </div>
                    <div id="container-foto">
                       <div id="fotoUsuario">
-                         <img src="./css/img/usuarioIcon/user1.png" alt="userIcon">
+                         <a href="perfil.php">
+                            <img src="./css/img/usuarioIcon/user1.png" alt="userIcon">
+                         </a>
                       </div>
                    </div>
                 </div>

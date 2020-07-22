@@ -79,7 +79,7 @@ require('php/calendarphp/getvar.php');
           <ul id="header-container">
              
              <li><a href="home.php"><h1>Home</h1></a></li>
-             <li><a href=""><h1>Sobre</h1></a></li>
+             <li><a href="sobre.php"><h1>Sobre</h1></a></li>
              <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
              
@@ -95,7 +95,9 @@ require('php/calendarphp/getvar.php');
                    </div>
                    <div id="container-foto">
                       <div id="fotoUsuario">
-                         <img src="./css/img/usuarioIcon/user1.png" alt="userIcon">
+                         <a href="perfil.php">
+                            <img src="./css/img/usuarioIcon/user1.png" alt="userIcon">
+                         </a>
                       </div>
                    </div>
                 </div>

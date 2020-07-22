@@ -17,6 +17,25 @@ session_start();
 
 <script>
 
+$(document).ready(function (){
+
+   $.ajax({
+      url: 'php/verificar_login.php',
+      success: function(data) {
+         console.log(data);
+         if(data == "Logado"){
+            $('#form-login').hide();
+            $('#usuario').show();
+         }
+         if(data == "NaoLogado"){
+            $('#usuario').hide();
+            $('#form-login').show();
+         }
+      }
+});
+
+});
+
 //confirmar exclusão da reservar...
 function confirmar(codigo){
 		opcao = confirm("Deseja realmente cancelar esta reserva?");	
@@ -30,22 +49,6 @@ function confirmar(codigo){
 	    });
 	}	
 }
-
-
-$.ajax({
-      url: 'php/verificar_login.php',
-      success: function(data) {
-   console.log(data);
-   if(data == "Logado"){
-      $('#form-login').hide();
-      $('#usuario').show();
-   }
-   if(data == "NaoLogado"){
-      $('#usuario').hide();
-      $('#form-login').show();
-   }
-}
-});
 </script>
 </head>
 <body>
@@ -56,7 +59,7 @@ $.ajax({
          <ul id="header-container" style="width:100%;">
             
             <li><a href="home.php"><h1>Home</h1></a></li>
-            <li><a href=""><h1>Sobre</h1></a></li>
+            <li><a href="sobre.php"><h1>Sobre</h1></a></li>
             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
             <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
             
