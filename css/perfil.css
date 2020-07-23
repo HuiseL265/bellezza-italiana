@@ -48,6 +48,8 @@ body{
 }
 #perfilUsuario p{
     text-align:center;
+    font-family:"NotoSansTC-Bold";
+    font-weight:bold;
 }
     #fotoPerfil{
         width:100px;

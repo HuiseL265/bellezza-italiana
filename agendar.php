@@ -34,6 +34,12 @@ require('php/calendarphp/getvar.php');
             switch(msg){
                case '1':
                   alert("Mesa reservada com sucesso!");
+                  opcao = confirm("Deseja escolher um prato para sua reserva?");
+                  if(opcao == true){
+                     window.location.assign("cardapio.php");
+                  }else{
+                     window.location.assign("perfil.php");
+                  }
                break;
                case '2':
                   alert("Você já possui uma reserva pendente");

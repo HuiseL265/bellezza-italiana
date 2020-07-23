@@ -95,8 +95,8 @@ td a{
             <tr>
                 <td>Código</td>
                 <td style="text-align: center;">
-                    <input type="text" name="cod" value="<?php echo $clienteAlt['cod']?>" hidden="hidden" >
-                    <?php echo $clienteAlt['cod']?>
+                    <input type="text" name="cod" value="<?php echo $clienteAlt['codCliente']?>" hidden="hidden" >
+                    <?php echo $clienteAlt['codCliente']?>
                 </td>
             </tr>
             <tr>
