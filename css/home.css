@@ -24,6 +24,7 @@ body{
     background-color:rgba(66, 51, 51,0.9);
     text-decoration: none;
     overflow-x: hidden;
+    width:100vw;
 }
 
 #header{
@@ -112,17 +113,30 @@ body{
 
 
 #central{
+    width:100vw;
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
-    
+    padding-top: 50px;
+    background-image: url(img/background/fundoItaliano.png);
+    image-rendering: pixelated;
+    background-repeat: no-repeat;
+    background-size:100%;
 }
 
 #info{
     width: 600px;
     height: 500px;
-
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-align:center;
 }
+    #info p{
+        font-size:40px;
+        font-style: italic;
+        text-shadow: 0px 0px 5px #9c5948;
+    }
+
 #registrar{
     width: 600px;
     height: 500px;
@@ -130,6 +144,7 @@ body{
 #reservar{
     width: 700px;
     height: 500px;
+    justify-self: center;
 }
 
 #reservar button{
@@ -161,7 +176,7 @@ font-size: 30px;
     width:380px;
     height:450px;
     border-radius:10px;
-    background-color:rgba(46, 46, 46,0.8);	
+    background-color:rgba(46, 46, 46,1);	
 
     display:flex;
 }
@@ -186,7 +201,7 @@ tr td:first-child{
     color:white;
 }
 
-input{
+td input{
     border-color:#808080;
     border-radius:5px;
     height:30px;
@@ -207,32 +222,31 @@ a{
     a:hover{
         text-decoration: underline;
     }
+        #confirm{
+            right:20%;
+            position:relative;
+            color:black;
+            background: #33df7a;
 
-#confirm{
-    color:black;
-    background: #33df7a;
+            width: 180px;
+            height: 45px;
 
-    width: 180px;
-    height: 45px;
+            border-radius: 5px;
 
-    float:right;
+            font-size: 16px;
+            font-weight: bold;
 
-    border-radius: 5px;
+            box-shadow:0px 4px 16px rgba(7, 206, 83, 0.185);
 
-    font-size: 16px;
-    font-weight: bold;
+            margin:0;
+        }
 
-    box-shadow:0px 4px 16px rgba(7, 206, 83, 0.185);
-
-    margin:0;
-}
-
-    #confirm:hover{
-        background-color: #ffffff;
-        text-decoration:none;
-        cursor: pointer;
-   
-	}
+            #confirm:hover{
+                background-color: #ffffff;
+                text-decoration:none;
+                cursor: pointer;
+        
+            }
 
 
 #rodape{

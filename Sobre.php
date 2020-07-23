@@ -35,7 +35,7 @@ session_start();
    <header id="header" style="display:flex;">
          <a href="#"><img src="css/img/logo/logoRest.png" alt="logo" height="80px"></a>
 
-          <ul id="header-container" style="width:100%;">
+          <ul id="header-container" style="width:100%;display:flex;justify-content:space-between;">
              <li><a href="home.php"><h1>Home</h1></a></li>
              <li><a href="Sobre.php"><h1>Sobre</h1></a></li>
              <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
@@ -98,8 +98,8 @@ session_start();
       <img src="css/img/background/Menu_Sobre.jpg" title="sobre" height="35%" width="100%">
       	</div>
       <div class="PrimeiroTexto">
-      	<p>Iniciamos nossos restaurantes no ano de 2000 no Brasil, inicialmente o restaurante se chamava "Local Pasta", onde vendíamos uma grande variedade de pizzas, por um valor a baixo da concorrência por ter uma parceria com uma empresa Italiana chamada de “Macarrone”. Anos depois começamos a crescer e por isso nos acrescentamos todos os tipos de comidas italianas no cardápio para saciar o apetite de nossos clientes e com isso mudamos nosso nome para “Taliatelle Italiane” para combinar mais com o nosso restaurante.</p>  
-      	<p id="Visite">Visite-nos e encante-se!</p>
+      	<p><i>Iniciamos nossos restaurantes no ano de 2000 no Brasil, inicialmente o restaurante se chamava "Local Pasta", onde vendíamos uma grande variedade de pizzas, por um valor a baixo da concorrência por ter uma parceria com uma empresa Italiana chamada de “Macarrone”. Anos depois começamos a crescer e por isso nos acrescentamos todos os tipos de comidas italianas no cardápio para saciar o apetite de nossos clientes e com isso mudamos nosso nome para “Taliatelle Italiane” para combinar mais com o nosso restaurante.</i></p>  
+      	<p id="Visite"><i>Visite-nos e encante-se!</i></p>
       </div>
       <div class="LinhaDoTempo">
       	<h2> Linha do Tempo</h2>

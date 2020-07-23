@@ -27,8 +27,8 @@ while($dados = mysqli_fetch_array($dadosReserva)){
                          FILE_APPEND);
     }else{
         file_put_contents("$nomeArquivo",
-                        "Data: $dataHoje \nHorario do Registro: $hora \n\nIdMesa;ClienteID;Nome do Cliente;Data;Hora;Status
-                        \n$dados[IdMesa];$dados[clienteID];$dados[cofCliente];$dados[data];$dados[hora];$dados[status]");
+                        "Data: $dataHoje \nHorario do Registro: $hora \n\nIdMesa;codCliente;Nome do Cliente;Data;Hora;Status
+                        \n$dados[IdMesa];$dados[codCliente];$dados[codCliente];$dados[data];$dados[hora];$dados[status]");
     }
 }
 

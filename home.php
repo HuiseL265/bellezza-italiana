@@ -95,9 +95,10 @@ session_start();
              </form>
       </header>
       <div id="central">
+         <!--<img id="fundoCentral" src="css/img/background/fundo2.jpeg" alt="fundoRestaurante">-->
          <div id="info">
-            <img src="css/img/background/restaurante-italiano.jpg" alt="SOS alimentos">
-            <p style="color:white;">Venha experimentar a Bellezza Italiana, um dos melhores restaurantes italianos de São Paulo</p>
+            <!--<img src="css/img/background/restaurante-italiano.jpg" alt="SOS alimentos">-->
+            <p style="color:white;">Venha experimentar a <b>Bellezza Italiana</b>, um dos melhores restaurantes italianos de São Paulo</p>
          </div>
          <div id="registrar">
             <form action="php/incluir.act.php" method="post" onsubmit="return validarSenhas()">
@@ -146,15 +147,15 @@ session_start();
          </div>
 
       <div id="reservar">
-      <h1 style="color:white; font-size:27.5px;">VEJA NOSSO CARDÁPIO E AGENDE SUA MESA</h1>
-      <img src="" alt="">
-      <a href="cardapio.php"><button>CARDÁPIO</button></a>
-      <a href="agendar.php"><button>AGENDAR</button></a>
+         <h1 style="color:white; font-size:27.5px;">VEJA NOSSO CARDÁPIO E AGENDE SUA MESA</h1>
+         <img src="" alt="">
+         <a href="cardapio.php"><button>CARDÁPIO</button></a>
+         <a href="agendar.php"><button>AGENDAR</button></a>
       </div>
 
       </div>
 
-      <div id="rodape">
+      <div id="rodape" style="width:100%">
 
       <H1 style="color:black;">LOCALIZAÇÃO</H1>
       <div id="mapa">
