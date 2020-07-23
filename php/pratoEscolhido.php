@@ -2,7 +2,13 @@
 session_start();
     require('connect.php');
     
+    $cliente = $_SESSION['codCliente'];
+
     $comidas = mysqli_query($con,"Select * from `tb_pratos`");
+
+    $reservas = mysqli_query($con, "SELECT `idReserva` FROM `tb_reserva` WHERE `codCliente` = $cliente AND `status` = 'Pendente'");
+    $reservas = mysqli_fetch_array($reservas);
+    
 
     if(!isset($_SESSION['email'])){
       header('location:../cardapio?success=noLogin');
@@ -12,16 +18,15 @@ session_start();
       $prato =$_POST['prato'];
 
       foreach ($prato as $key => $value) {
-                                                                                      //Número para teste
-           mysqli_query($con,"INSERT INTO `tb_pratopedido`(`idReserva`, `idComida`) VALUES (4,$value)");
+           mysqli_query($con,"INSERT INTO `tb_pratopedido`(`idReserva`, `idComida`) VALUES ($reservas[idReserva],$value)");
         }
         header('location:../cardapio?success=true');
     }else {
-      echo 'Nenhum prato escolhido';
+      header('location:../cardapio?success=Null');
     }
 
     
-    /*if (isset($_POST['prato'])) {
+   /* if (isset($_POST['prato'])) {
     $pratos =$_POST['prato'];
 
     if(count($pratos) == 1){

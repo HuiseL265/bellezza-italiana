@@ -42,7 +42,9 @@ session_start();
                   
                }else if(msgCardapio == "true"){
                   window.location.reload;
-               }else if(msgCardapio == "false" )
+               }else if(msgCardapio == "Null" ){
+                  alert('Nenhum Prato Escolhido')
+               }
 
                $('article').click(function(f){
                   $(this).toggleClass("borda");
@@ -116,33 +118,40 @@ session_start();
              </form>
       </header>
       <div id="central">
+
+
+         <div class="pratos">
             <form action="php/pratoEscolhido.php" method="post">
-                <div class="pratos">
-        
-                    <article>
-                        <h1>Título</h1>
-                        <label for="p1">
-                        <img src="css/img/cardapio/pratos/taco.jpg" alt="">
-                        </label>
-                        <input type="checkbox" id="p1" name="prato[]" value="1">
-                        <h3>Descrição comida</h3>
-                     </article>
-                     
-                     <article>
-                        <h1>Título</h1>
-                        <label for="p2">
-                        <img src="css/img/cardapio/pratos/sushi.jpg" alt="">
-                        </label>
-                        <input type="checkbox" id="p2" name="prato[]" value="2">
-                        <h3>Descrição comida</h3>
-                    </article>
-                    
-                </div>
-        
+                
+
+                  <?php
+                  require('php/connect.php');
+
+                  $pratos = mysqli_query($con, "Select * from `tb_pratos`");
+
+                  while ($prato = mysqli_fetch_array($pratos)) {
+                     echo "<article>
+                           <label for='$prato[idComida]'>
+                              <h1>$prato[comida]</h1>
+                              
+                              <img src='css/img/cardapio/pratos/$prato[comida].jpg' alt=''>
+                           
+                              <input type='checkbox' id='$prato[idComida]' name='prato[]' value='$prato[idComida]'>
+                              <h3>Descrição comida</h3>
+                              </label>
+                        </article>";
+                  }   
+                  ?>  
+                
+         </div>       
+               
+               <div class="pedido">
                 <input type="submit" value="Enviar Pedido">
+               </div>
             </form>
          
       </div>
+     
       <?php require('Rodape.php');
       ?>
    </body>
