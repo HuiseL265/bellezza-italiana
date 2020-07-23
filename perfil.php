@@ -49,6 +49,20 @@ function confirmar(codigo){
 	    });
 	}	
 }
+
+//retirar prato...
+function retirarPrato(idPedido){
+		opcao = confirm("Deseja realmente retirar este prato?");	
+	if(opcao == true){
+		$.ajax({
+  				url: 'php/excluirPedido.php?idPedido='+idPedido,
+  				success: function(data) {
+                    alert(data);
+                    location.reload();
+  		        }
+	    });
+	}	
+}
 </script>
 </head>
 <body>
@@ -130,6 +144,10 @@ function confirmar(codigo){
          <div id="reserva-container">
             <div id="reservaUsuario">
                <?php include('php/listReservaFrontEnd.php') ?>
+            </div>
+            <div id="pratosEscolhidos">
+               <h3>*Pratos Escolhidos*</h3>
+               <?php include('php/listPratosFrontEnd.php') ?>
             </div>
          </div>
      </div>

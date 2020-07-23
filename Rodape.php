@@ -9,7 +9,7 @@
     	bottom:0;
     	width:100%;
 		border-top:solid;
-		border-color:goldenrod;
+		border-color:#E58169;
 		border-width:medium;
 		background-color:#333;
 		height:250px;
@@ -23,7 +23,7 @@
 		font-size:12px;
 	}
 	.Contato h2{
-		color:goldenrod;
+		color:#E58169;
 		margin-bottom:10px;
 	}
 	.Contato p{
@@ -40,7 +40,7 @@
 		margin:20px 10% 10px 10px;
 	}
 	.EscolhaFuter h2{
-		color:goldenrod;
+		color:#E58169;
 		margin-bottom:10px;
 	}
 	.EscolhaFuter .OpcaoFuter{
@@ -57,7 +57,7 @@
 		margin:20px 30px 10px 10px;
 	}
 	.Contact h2{
-		color:goldenrod;
+		color:#E58169;
 		margin-bottom:10px;
 	}
 	.Contact .CampoEmail{
@@ -68,6 +68,9 @@
 		width:100%;
 		height:85px;
 		resize:none;
+	}
+	.BotaoEnviar{
+		color:black;
 	}
 	</style>    
 		<footer>

@@ -18,9 +18,8 @@
         margin:auto;
         width:auto;
         background-color: rgb(51, 51, 51);
-        box-shadow: 0px 0px 5px rgba(196, 196, 196, 1);
         border-radius: 10px;
-        box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0px 10px 0px rgba(0, 0, 0, 0.15);
         overflow:hidden;
     }
 
@@ -77,8 +76,9 @@
                     <th>Status</th>                
                 </tr>";
         
-        //realiza a inserção de dados enquanto houver registros.
-        while($reserva = mysqli_fetch_array($reservas)){
+        //realiza a inserção de dados a partir da reserva registrada
+        $reserva = mysqli_fetch_array($reservas);
+
             echo "<tr>";
                 echo "<td> $reserva[idReserva] </td>";                
                 echo "<td> $reserva[IdMesa] </td>";
@@ -92,7 +92,6 @@
                      </a>
                   </td>";
                 echo "</tr>";
-        }
         echo "</table>";
         echo "</div>";
     }
