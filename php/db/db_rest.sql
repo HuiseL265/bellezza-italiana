@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Tempo de geração: 23-Jul-2020 às 14:16
+-- Tempo de geração: 24-Jul-2020 às 14:18
 -- Versão do servidor: 8.0.18
 -- versão do PHP: 7.3.12
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `db_rest`
 --
+CREATE DATABASE IF NOT EXISTS `db_rest` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `db_rest`;
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `tb_pratopedido` (
   PRIMARY KEY (`idPedido`),
   KEY `idComida_fk` (`idComida`),
   KEY `idReserva_fk` (`idReserva`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -83,16 +85,16 @@ CREATE TABLE IF NOT EXISTS `tb_pratos` (
 --
 
 INSERT INTO `tb_pratos` (`idComida`, `comida`, `DescricaoPrato`) VALUES
-(1, 'Arancini', ''),
-(2, 'Bisteca Fiorentina', ''),
-(3, 'Bruschetta', ''),
-(4, 'Cacio e Pepe', ''),
-(5, 'Lasanha', ''),
-(6, 'Macarrão à Bolonhesa', ''),
-(7, 'Ossobuco', ''),
-(8, 'Risoto', ''),
-(9, 'Tiramisù', ''),
-(10, 'Gelato', '');
+(1, 'Arancini', 'O Arancini é uma especialidade da culinária siciliana. É uma bola de arroz empanado e frito, recheado com molho de carne, ervilhas e queijo ou presunto em cubos e mussarela.'),
+(2, 'Bisteca Fiorentina', 'A Bistecca Fiorentina é um prato de carne típico da cozinha italiana muito tradicional na região da Toscana. Consiste em um corte que contém o contra filé e o filé mignon bovino.'),
+(3, 'Bruschetta', '​A Bruschetta é um antepasto italiano feito com uma fatia de pão italiano rústico, de farinha escura e grossa, de casca dura, tostada na grelha, esfregada com alho, untada com abundante azeite e polvilhada com sal e eventualmente com pimenta-do-reino.'),
+(4, 'Cacio e Pepe', 'Apesar do nome chique, cacio e pepe significa “queijo e pimenta”. Ou seja, esse espaguete é feito com queijo local de pecorino (cacio) e pimenta do reino preta moída (pepe) – é um prato clássico romano.'),
+(5, 'Lasanha', 'Lasanha (lasagne em italiano) é tanto um tipo de massa alimentícia formada por fitas largas, como também um prato, por vezes chamado lasanha ao forno, feito com essas fitas colocadas em camadas, e entremeadas com recheio (queijo, carne moída ou outros) e molho.\r\n'),
+(6, 'Macarrão à Bolonhesa', 'O Macarrão à Bolonhesa tem como origem a região da Bolonha na Itália, é na verdade mais uma forma de utilizar um dos molhos mais conhecidos da culinária italiana, o molho à Bolonhesa.\r\nEste molho, a base de tomate e carne moída é usado em diversas outras receitas de massas, como por exemplo, a lasanha à Bolonhesa.'),
+(7, 'Ossobuco', 'Típico da Lombardia, o Ossobuco é o corte extraído da perna traseira do boi e nada mais é do que o conhecido músculo, só que cortado de modo diferente, em rodelas grossas de carne com um osso ao centro. É nesse osso oco, que está acomodado o tutano, com sabor e textura inigualável.'),
+(8, 'Risoto', 'O risoto é um prato típico italiano em que se fritam levemente as cebolas e o arbório, ou o arroz em manteiga, e se vai gradualmente deitando fundo de carne ou legumes e outros ingredientes, até o arroz estar cozido e não poder absorver mais líquido.'),
+(9, 'Tiramisù', 'O Tiramisù ( \"levanta-me\" ou \"puxa-me para cima\", assim chamado por ser muito energético) é uma sobremesa tipicamente italiana, possivelmente originária da cidade de Treviso, na região do Vêneto, e que consiste em camadas de biscoitos de champagne embebidas em café entremeadas por um creme à base de queijo mascarpone, creme de leite fresco, ovos, açúcar, vinho do tipo Marsala e polvilhadas com cacau em pó e café.'),
+(10, 'Gelato', 'Gelato é o sorvete feito no estilo italiano. Gelato é simplesmente a palavra italiana para sorvete, mas também passou a significar especificamente o sorvete italiano. O gelato é feito com uma base de leite, creme e açúcar, além de ser aromatizado com purê de frutas e nozes e outros aromas.');
 
 -- --------------------------------------------------------
 
@@ -111,14 +113,7 @@ CREATE TABLE IF NOT EXISTS `tb_reserva` (
   `status` varchar(10) NOT NULL,
   PRIMARY KEY (`idReserva`),
   KEY `codCliente` (`codCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Registro das Reservas';
-
---
--- Extraindo dados da tabela `tb_reserva`
---
-
-INSERT INTO `tb_reserva` (`idReserva`, `IdMesa`, `codCliente`, `nomeCliente`, `hora`, `data`, `status`) VALUES
-(27, 3, 27, 'Thiago Frederico', '15:00:00', '2020-07-20', 'Pendente');
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Registro das Reservas';
 
 --
 -- Restrições para despejos de tabelas
