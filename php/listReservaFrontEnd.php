@@ -62,7 +62,7 @@
     $reservas = mysqli_query($con, "SELECT * FROM `tb_reserva` WHERE `codCliente` = $id AND `status` = 'Pendente'");
 
     if(mysqli_num_rows($reservas) === 0){
-        echo "<h4 style=color:white;>Você não solicitou nenhuma reserva ainda</h4>";
+        echo "<h4 style=color:#cecece;>Você não solicitou nenhuma reserva ainda</h4>";
     }else{
         //criação dos identificados das colunas
         echo   "<div class='table-res'>

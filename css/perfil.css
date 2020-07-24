@@ -117,7 +117,6 @@ body{
         grid-template-rows: 30px 1fr;
         grid-template-areas: "titlePratosEscolhidos" 
                              "pratosEscolhidosTable";
-
     }
 
     #pratosEscolhidos h3{
@@ -132,6 +131,14 @@ body{
         margin-top:15px;
         justify-self: center;
         grid-area:pratosEscolhidosTable;
+    }
+    #pratosEscolhidos .avisoPrato{
+        display:flex;
+        align-self:center;
+        justify-self:center;
+        font-size:16px;
+        text-align:center;
+        color:#cecece;        
     }
 
     ::-webkit-scrollbar-thumb:horizontal {

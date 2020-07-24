@@ -73,46 +73,49 @@
     $reservas = mysqli_query($con, "SELECT * FROM `tb_reserva` WHERE `codCliente` = $id AND `status` = 'Pendente'");
 
     if(mysqli_num_rows($reservas) === 0){
-        echo "<h4 style=color:white;text-align:center;>Nenhum prato escolhido para esta reserva.</h4>";
+        echo "<p class='avisoPrato'>Agende uma reserva para escolher pratos</p>";
     }else{
-
-        //criação dos identificados das colunas
+        $reserva = mysqli_fetch_array($reservas);
+        $idReserva = $reserva['idReserva'];
+        $pratos = mysqli_query($con, "SELECT * FROM `tb_pratos` INNER JOIN `tb_pratopedido` ON `tb_pratos`.`idComida` = `tb_pratopedido`.`idComida` WHERE `tb_pratopedido`.`idReserva` = $idReserva");
         
+
+        if(mysqli_num_rows($pratos) === 0){
+            echo "<p class='avisoPrato'>Nenhum prato escolhido para esta reserva.</p>";
+        }else{
                 
         echo   "<div class='table-pratos'>";
-        //realiza a inserção de dados enquanto houver registros.
-            $reserva = mysqli_fetch_array($reservas);
-            $idReserva = $reserva['idReserva'];
-            $pratos = mysqli_query($con, "SELECT * FROM `tb_pratos` INNER JOIN `tb_pratopedido` ON `tb_pratos`.`idComida` = `tb_pratopedido`.`idComida` WHERE `tb_pratopedido`.`idReserva` = $idReserva");
-            while($pratoEscolhido = mysqli_fetch_array($pratos)){
-                echo "<table>";
-                echo "<tr>                
-                        <th>
-                            <h4>
-                            <i>$pratoEscolhido[comida]</i>
-                            </h4>
-                        </th>             
-                    </tr>";
-                echo "<tr>";
-                echo "<td><img class=imgPrato src='css/img/cardapio/pratos/$pratoEscolhido[comida].jpg' alt=''></td>";
-                echo "</tr>";
-                /*
-                echo "<tr>";
-                echo "<td><p>Descrição comida</p></td>";
-                echo "</tr>";
-                */
-                echo "<tr>
-                      <td>
-                         <a class=btn-erase_prato href=javascript:retirarPrato($pratoEscolhido[idPedido])>
-                             <img src=css/img/backend_img/erase-gray.png>
-                         </a>
-                      </td>";
-                echo "</tr>";
-                    
+                //realiza a inserção de pratos enquanto houver registros.            
+                while($pratoEscolhido = mysqli_fetch_array($pratos)){
+                    echo "<table>";
+                    echo "<tr>                
+                            <th>
+                                <h4>
+                                <i>$pratoEscolhido[comida]</i>
+                                </h4>
+                            </th>             
+                        </tr>";
+                    echo "<tr>";
+                    echo "<td><img class=imgPrato src='css/img/cardapio/pratos/$pratoEscolhido[comida].jpg' alt=''></td>";
+                    echo "</tr>";
+                    /*
+                    echo "<tr>";
+                    echo "<td><p>Descrição comida</p></td>";
+                    echo "</tr>";
+                    */
+                    echo "<tr>
+                          <td>
+                             <a class=btn-erase_prato href=javascript:retirarPrato($pratoEscolhido[idPedido])>
+                                 <img src=css/img/backend_img/erase-gray.png>
+                             </a>
+                          </td>";
+                    echo "</tr>";
+                        
+                }
             }
-
-        }
-        echo "</table>";
-        echo "</div>";
-
+            echo "</table>";
+            echo "</div>";
+    
+            }
+           
     ?>

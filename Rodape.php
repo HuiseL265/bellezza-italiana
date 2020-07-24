@@ -14,6 +14,7 @@
 		background-color:#333;
 		height:250px;
 		color:#FFF;
+		box-shadow:0px -2px 10px #2b2a2a;
 	}
 	.Contato{
 		width:35%;
