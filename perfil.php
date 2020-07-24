@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
 session_start();
+if (!isset($_SESSION['email'])) {
+   header('location:home.php');
+}
 ?>
 <html lang="en">
 <head>

@@ -41,9 +41,9 @@ session_start();
                   alert('É preciso estar logado para fazer o pedido')
                   
                }else if(msgCardapio == "true"){
-                  window.location.reload;
+                  alert('Pedido realizado');
                }else if(msgCardapio == "Null" ){
-                  alert('Nenhum Prato Escolhido')
+                  alert('Nenhum prato selecionado')
                }
 
                $('article').click(function(f){
