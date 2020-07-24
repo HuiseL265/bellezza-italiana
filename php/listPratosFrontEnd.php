@@ -6,10 +6,11 @@
     }
     .table-pratos{
         display:flex;
-        justify-content:space-between;
+        justify-content:stretch;
         width:90%;
         height:70%;
         overflow:scroll;
+        border:transparent;
     }
 
     .table-pratos table{
@@ -17,9 +18,9 @@
         width:120px;
         height:160px;
         margin-right:40px;
-        background: rgb(58, 58, 58);
         border-radius: 5px;
-        box-shadow: -5px 5px 10px 0px rgb(27, 27, 27);
+        box-shadow: 0px 0px 10px 0px rgb(27, 27, 27);
+        border-color:transparent;
     }
 
     .table-pratos table tr:first-child {
@@ -27,7 +28,7 @@
     }
 
     .table-pratos th {
-    font-size: 16px;
+    font-size: 14px;
     color: white;
     text-shadow:0px 0px 1px white;
     line-height:20px;
@@ -51,7 +52,7 @@
     margin-bottom:20px;    
     }
     .table-pratos tr:first-child {
-        height:30px;          
+        height:45px;          
     }
         .table-pratos table tr:nth-child(2){
             border-bottom:1px solid white;
@@ -59,6 +60,7 @@
 
         .imgPrato{
             width:100%;
+            height:70px;
         }
     </style>
     ";

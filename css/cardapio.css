@@ -174,17 +174,6 @@ body{
 
 
 
-#central{
-    display: grid;
-    justify-content: space-around;
-    margin-top: 50px;    
-}
-
-
-
-/* CODIGO DO ALANZINHO */
-
-
 
 input{
     border-color:#808080;
@@ -209,13 +198,8 @@ a:hover{
     text-decoration: underline;
     color: #f3f3f3;
 }
- 
- input[type=checkbox]{
-   /* display: none;*/
-    
-    
-}
-label{
+
+.pratos label{
     cursor: pointer;
     /*width: 300px;
     height: 200px;*/
@@ -226,30 +210,138 @@ label{
     width: 100vh;
     display: flex;
 }*/
-.borda{
-    background-color: rgba(236, 230, 230, 0.3);
-
-}
 
 label img{
     width: 300px;
     height: 200px;
 }
 
-article{
-    background-color: rgba(27, 24, 24, 0.3);
-    margin: 10px;
-    float: left;
+/*Cores utilizadas nos pratos*/
+/* Color Theme Swatches in Hex */
+.Italian-Food-XP-1-hex { color: #D90D1E; }
+.Italian-Food-XP-2-hex { color: #4FA637; }
+.Italian-Food-XP-3-hex { color: #F29F05; }
+.Italian-Food-XP-4-hex { color: #F2C166; }
+.Italian-Food-XP-5-hex { color: #F27405; }
+
+/* Color Theme Swatches in RGBA */
+.Italian-Food-XP-1-rgba { color: rgba(216, 13, 29, 1); }
+.Italian-Food-XP-2-rgba { color: rgba(78, 165, 54, 1); }
+.Italian-Food-XP-3-rgba { color: rgba(242, 159, 4, 1); }
+.Italian-Food-XP-4-rgba { color: rgba(242, 193, 101, 1); }
+.Italian-Food-XP-5-rgba { color: rgba(242, 115, 4, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Italian-Food-XP-1-hsla { color: hsla(354, 88, 45, 1); }
+.Italian-Food-XP-2-hsla { color: hsla(106, 50, 43, 1); }
+.Italian-Food-XP-3-hsla { color: hsla(39, 96, 48, 1); }
+.Italian-Food-XP-4-hsla { color: hsla(39, 84, 67, 1); }
+.Italian-Food-XP-5-hsla { color: hsla(28, 96, 48, 1); }
+
+.pratos{
+    background-color: rgba(242, 115, 4, 0.8);
+    width:100%;
+    height:auto;
+
+    display:flex;
+    margin-top: 50px;    
 }
 
-article:hover{
-    background-color: rgba(236, 230, 230, 0.3);
-    
-}
+    .pratos article{
+        float:left;
+        margin:15px;
+        width:300px;
+        height:500px;
+
+        background-color:white;
+        background-image:url("img/background/old-paper.jpg");
+        border-radius:5px;
+    }
+
+    .pratos article:hover{
+        background-color: rgba(242, 193, 101, 1);
+        background-image:url("img/background/old-paper-orange.jpg");
+    }
+
+
 
 .pedido input[type=submit]{
-    height: 50px;
-    width: 100px;
-    border-radius: 15px;
-    background-color: green;
+    height: 70px;
+    width: 70%;
+    border-radius: 10px;
+    
+    font-size:30px;
+    text-align:center;
+    background-color: rgba(78, 165, 54, 0.8);
+    color:white;
 }
+    .pedido input[type=submit]:hover{
+        background-color:rgba(78, 165, 54, 1);
+        box-shadow:0px 0px 10px rgba(78, 165, 54, 1);
+        cursor:pointer;        
+    }
+
+    .pedido{
+        margin-top:10px;
+    }
+
+.descricaoPrato{
+    margin:0 auto;
+    width:80%;
+    height:220px;
+    /*background-color:grey;*/
+    overflow-y:scroll;
+    padding-right:10px;
+    padding-left:5px;
+}
+    .descricaoPrato h4{
+        font-size:18px;
+    }
+    .descricaoPrato p{
+        font-size:14px;
+        text-align:justify;
+    }
+/* classe da função para alterar ao selecionar prato */
+.selectedPlate{
+    background-color: rgba(78, 165, 54, 1) !important;
+    background-image:url("img/background/old-paper-green.jpg") !important;
+    box-shadow:0px 0px 10px rgba(78, 165, 54, 1);
+    color:white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.descricaoPrato::-webkit-scrollbar-track {
+    background:transparent;
+    border-radius:radius;
+    }
+    
+    .descricaoPrato::-webkit-scrollbar-thumb {
+    background: #97f173;
+    }
+    
+    .descricaoPrato::-webkit-scrollbar-thumb {
+        background: rgba(216, 13, 29, 0.7) !important;
+        border-radius:5px  !important;
+        }
+    
+        .descricaoPrato::-webkit-scrollbar-thumb:active {
+            background: rgba(216, 13, 29, 1)  !important;
+        }
+        
+         

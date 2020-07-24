@@ -61,7 +61,7 @@ session_start();
                 </div>
 
                 <!--não logado-->             
-             <form id="form-login" method="post" action="php/logar.act.php" onsubmit="javascript:Logar()">
+             <form id="form-login" method="post" action="php/logar.act.php">
                <input type="email" id="emailLogin" name="email" placeholder="Login" required="required">
                <input type="password" id="senhaLogin" name="senha" placeholder="Senha" required="required">
                <button>LOGAR</button>
