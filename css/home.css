@@ -161,6 +161,7 @@ font-size: 30px;
 
 #reservar button:hover{
     background-color:white;
+    cursor: pointer;
     }
 
 
@@ -255,7 +256,6 @@ a{
     background-color: #E58169;
     text-align: center;
     align-items: center;
-    position: absolute;
     color: rgba(66, 51, 51,0.9);
 }
 
@@ -269,16 +269,119 @@ a{
 }
 
 #endereco{
+
     width: 500px;
     height: 70px;
     background-color:rgba(66, 51, 51,0.9);
-    float: left;
     border-radius: 5px;
-    text-align: center;
-    align-items: center;
     color: white;
 }
 
-#botao{
-    margin-left: 150px;
+#endereco button{
+    position: relative;
+    right:-80%;
+    color:black;
+    background: #33df7a;
+
+    width: 180px;
+    height: 45px;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow:0px 4px 16px rgba(7, 206, 83, 0.185);
+}
+
+#endereco button:hover{
+    background-color: #ffffff;
+    text-decoration:none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*RODAPÉ NAO TAVA INDO AI FIZ ISSO, DEU CERTO:*/
+
+.FundoFuter{
+    margin-top:20px;
+    bottom:0;
+    width:100%;
+    border-top:solid;
+    border-color:#E58169;
+    border-width:medium;
+    background-color:#333;
+    height:250px;
+    color:#FFF;
+    
+}
+.Contato{
+    width:35%;
+    height:auto;
+    float:left;
+    margin:20px 10% 10px 10px;
+    font-size:12px;
+}
+.Contato h2{
+    color:#E58169;
+    margin-bottom:10px;
+}
+.Contato p{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.Contato img{
+    height:15px;
+    width:15x;
+}
+.EscolhaFuter{
+    float:left;
+    font-size:12px;
+    margin:20px 10% 10px 10px;
+}
+.EscolhaFuter h2{
+    color:#E58169;
+    margin-bottom:10px;
+}
+.EscolhaFuter .OpcaoFuter{
+    margin-bottom:10px;
+}
+.EscolhaFuter a{
+    color:#FFF;
+    text-decoration:none;
+}
+.Contact{
+    width:25%;
+    float:right;
+    font-size:12px;
+    margin:20px 30px 10px 10px;
+}
+.Contact h2{
+    color:#E58169;
+    margin-bottom:10px;
+}
+.Contact .CampoEmail{
+    width:100%;
+    margin-bottom:10px;
+}
+.Contact .CampoTexto{
+    width:100%;
+    height:85px;
+    resize:none;
+}
+.BotaoEnviar{
+    color:black;
 }

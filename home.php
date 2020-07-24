@@ -161,11 +161,46 @@ session_start();
       <div id="mapa">
       <div id="endereco">
       <p>Av. de Berna 3, 1050-062 Lisboa, Portugal</p>
-      <div id="botao"><a href="https://www.google.com/maps/dir//38.7410367,-9.1474807/@38.741037,-9.147481,16z?hl=pt-BR"><button type="submit" id="confirm">ROTAS</button></a></div>
+      <a href="https://www.google.com/maps/dir//38.7410367,-9.1474807/@38.741037,-9.147481,16z?hl=pt-BR" target="_blank"><button>ROTAS</button></a>
       </div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.9878575023963!2d-9.149669384387172!3d38.741040863749966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19339e13a1ba03%3A0x6f4663fc6ffafec2!2sTagliatelle!5e0!3m2!1spt-BR!2sbr!4v1595032900258!5m2!1spt-BR!2sbr" width="500" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
-      
       </div>
+
+      <!--rodapé bugado-->
+      <footer>
+        	<div class=FundoFuter>
+    			<div class=Contato>
+          		<h2>Bellezza italiana</h2>
+                <p align=justify>Nós do Bellezza italiana se preocupamos para trazer uma boa experiência, temos todos os tipos de pratos Italianos e com uma exelente qualidade, segundo as criticas. Pela nossa preocupação dedicimos abrir esse restaurante em um lugar confortavel com uma boa vista e muitas decorações para você se sentir confortavel.</p>
+                <table>
+           			 <tr>
+                		<td><img src=css/img/icon/Telefone.png></td>
+                    	<td><p>(55)(11)1234-5678</p></td>
+                 	</tr>
+                 	<tr>
+                    	<td><img src=css/img/icon/Email.png></td>
+                    	<td><p>contatorestaurante@restaurante.com</p>
+                	</tr>
+    			</table>
+                </div>
+
+                <div class=EscolhaFuter>
+                	<h2>Opções</h2>
+                	<ul>
+               			<li class=OpcaoFuter><a href=home.php><h1>Home</h1></a></li>
+             			<li class=OpcaoFuter><a href=sobre.php><h1>Sobre</h1></a></li>
+             			<li class=OpcaoFuter><a href=><h1>Contato</h1></a></li>
+                    </ul>
+                
+                </div>
+                <div class=Contact>
+                <h2>Nos Contate</h2> 
+              		<input class=CampoEmail type=email name=email placeholder=Email><br>
+              		<textarea class=CampoTexto placeholder=Mensagem></textarea><br>
+              		<input class=BotaoEnviar type=submit value=Enviar>
+                </div>
+            </div>
+		</footer>
    </body>
 </html>
