@@ -94,8 +94,8 @@ body{
 }
 
 .legendaMenu{
-    background-color: #2e2e2e;
-    background: linear-gradient(to bottom, rgba(66, 64, 64, 0.8), transparent);
+    /*background-color: #2e2e2e;
+    background: linear-gradient(to bottom, rgba(66, 64, 64, 0.8), transparent);*/
     margin: auto;
     float:right;
     width:226px;
