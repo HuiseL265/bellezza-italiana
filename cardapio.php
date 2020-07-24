@@ -71,9 +71,9 @@ session_start();
 
           <ul id="header-container">
              <li><a href="home.php"><h1>Home</h1></a></li>
-             <li><a href="sobre.php"><h1>Sobre</h1></a></li>
-             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
+             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
+             <li><a href="sobre.php"><h1>Sobre</h1></a></li>
 
              <!--logado-->
              <div id="usuario">
@@ -144,7 +144,7 @@ session_start();
                              
                               <div class=descricaoPrato>
                                  <h4>Descrição</h4>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                 <p>$prato[DescricaoPrato]</p>
                               </div>
 
                               </label>

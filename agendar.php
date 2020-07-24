@@ -22,6 +22,7 @@ require('php/calendarphp/getvar.php');
       <script>
 
          $(document).ready(function() {
+            $('.table-mesas').hide();
             $('#confirmarReserva-panel button').hide();
             $('#mesaSelecionada-panel h3').hide();
             $('#mesaSelecionada-panel input').hide();
@@ -46,6 +47,9 @@ require('php/calendarphp/getvar.php');
                break;
                case '3':
                   alert("Erro ao reservar mesa. Por favor, contate-nos em um de nossos canais para resolver o problema");
+               break;
+               case '4':
+                  alert("É preciso fazer uma reserva para escolher o prato");
                break;
 
                default:
@@ -85,9 +89,9 @@ require('php/calendarphp/getvar.php');
           <ul id="header-container">
              
              <li><a href="home.php"><h1>Home</h1></a></li>
-             <li><a href="sobre.php"><h1>Sobre</h1></a></li>
-             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
+             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
+             <li><a href="sobre.php"><h1>Sobre</h1></a></li>
              
              <div class="login">
              
@@ -144,7 +148,7 @@ require('php/calendarphp/getvar.php');
           
       </header>
 
-      <div id="container-menu">
+      <div id="menu-aux">
          <form action="php/reservarMesa.act.php" method="post">
 
             <table class="table-mesas"> <!-- Tabela das mesas -->
@@ -325,7 +329,7 @@ require('php/calendarphp/getvar.php');
                </div>
                <div id="mesaSelecionada-panel"> <!-- Mesa Selecionada PANEL -->
                   <h3>Mesa selecionada</h3>
-                  <input id="mesaSelecionada" name="IdMesa" readonly="readonly" value="Nenhuma mesa selecionada"/>
+                  <input id="mesaSelecionada" name="IdMesa" readonly="readonly" value="Escolha uma de nossas mesas"/>
                </div>
                <div id="confirmarReserva-panel"> <!-- Confirmação da Reserva -->
                   <button type="submit">Confirmar Reserva</button>

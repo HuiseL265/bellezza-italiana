@@ -39,11 +39,11 @@ body{
 
 /* css do menu */
 
-#container-menu form{
+#container-menu form, #menu-aux form{
     width:inherit;
     display:flex;
 }
-#container-menu{
+#container-menu, #menu-aux{
     width:700px;
     height:auto;
     background-color:#2e2e2e;
@@ -80,7 +80,7 @@ body{
         color:#353434;
     }
 
-#container-menu .mesaDisponivel{
+#container-menu .mesaDisponivel, #menu-aux .mesaDisponivel{
     text-align:center;
     background-color:#69e584;
 }
@@ -94,6 +94,9 @@ body{
 }
 
 .legendaMenu{
+    background-color: #2e2e2e;
+    background: linear-gradient(to bottom, rgba(66, 64, 64, 0.8), transparent);
+    margin: auto;
     float:right;
     width:226px;
     height:100%;
@@ -117,6 +120,7 @@ body{
     .legendaMenu p{
         color: white;
         text-align:center;
+
     }
     /*
     .legendaMenu #legendaTitle{

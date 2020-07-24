@@ -119,6 +119,8 @@ $(".day").click(function(){
 });
 
 $("#selectHora").change(function (){
+	$('#menu-aux').attr('id', 'container-menu');
+	$('.table-mesas').show(1000);
 
 	haMesasOcupadas = 0;
 	hora = $('#selectHora').val();
@@ -167,7 +169,7 @@ $("#selectHora").change(function (){
 
 	//reseta os valores e esconde o botão confirmar
 	$('#confirmarReserva-panel button').fadeOut('300');
-	$("#mesaSelecionada").val("Nenhuma mesa selecionada");
+	$("#mesaSelecionada").val("Escolha uma de nossas mesas");
 
 	//toggle da mesa escolhida
 	if(hora != "vazia"){

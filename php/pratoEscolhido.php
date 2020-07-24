@@ -14,19 +14,25 @@ session_start();
       header('location:../cardapio?success=noLogin');
     }
 
-    else if (isset($_POST['prato'])) {
+    else if (!isset($reservas)) {
+      $msg=4;
+      header('location:../agendar?msg='.$msg);
+    }
+
+     else if (isset($_POST['prato'])) {
       $prato =$_POST['prato'];
 
       foreach ($prato as $key => $value) {
            mysqli_query($con,"INSERT INTO `tb_pratopedido`(`idReserva`, `idComida`) VALUES ($reservas[idReserva],$value)");
         }
         header('location:../cardapio?success=true');
-    }else {
+    }
+    else {
       header('location:../cardapio?success=Null');
     }
 
     
-   /* if (isset($_POST['prato'])) {
+   /*if (isset($_POST['prato'])) {
     $pratos =$_POST['prato'];
 
     if(count($pratos) == 1){
