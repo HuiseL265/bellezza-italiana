@@ -119,6 +119,8 @@ $(".day").click(function(){
 });
 
 $("#selectHora").change(function (){
+	$('#menu-aux').attr('id', 'container-menu');
+	$('.table-mesas').show(1000);
 
 	haMesasOcupadas = 0;
 	hora = $('#selectHora').val();

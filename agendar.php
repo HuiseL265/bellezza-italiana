@@ -22,6 +22,7 @@ require('php/calendarphp/getvar.php');
       <script>
 
          $(document).ready(function() {
+            $('.table-mesas').hide();
             $('#confirmarReserva-panel button').hide();
             $('#mesaSelecionada-panel h3').hide();
             $('#mesaSelecionada-panel input').hide();
@@ -46,6 +47,9 @@ require('php/calendarphp/getvar.php');
                break;
                case '3':
                   alert("Erro ao reservar mesa. Por favor, contate-nos em um de nossos canais para resolver o problema");
+               break;
+               case '4':
+                  alert("É preciso fazer uma reserva para escolher o prato");
                break;
 
                default:
@@ -144,7 +148,7 @@ require('php/calendarphp/getvar.php');
           
       </header>
 
-      <div id="container-menu">
+      <div id="menu-aux">
          <form action="php/reservarMesa.act.php" method="post">
 
             <table class="table-mesas"> <!-- Tabela das mesas -->
