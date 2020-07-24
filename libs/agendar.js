@@ -169,7 +169,7 @@ $("#selectHora").change(function (){
 
 	//reseta os valores e esconde o botão confirmar
 	$('#confirmarReserva-panel button').fadeOut('300');
-	$("#mesaSelecionada").val("Nenhuma mesa selecionada");
+	$("#mesaSelecionada").val("Escolha uma de nossas mesas");
 
 	//toggle da mesa escolhida
 	if(hora != "vazia"){

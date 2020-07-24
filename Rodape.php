@@ -77,7 +77,7 @@
         	<div class=FundoFuter>
     			<div class=Contato>
           		<h2>Bellezza italiana</h2>
-                <p align=justify>Nós do Bellezza italiana se preocupamos para trazer uma boa experiência, temos todos os tipos de pratos Italianos e com uma exelente qualidade, segundo as criticas. Pela nossa preocupação dedicimos abrir esse restaurante em um lugar confortavel com uma boa vista e muitas decorações para você se sentir confortavel.</p>
+                <p align=justify>Nós do Bellezza Italiana nos preocupamos em trazer uma boa experiência para os nossos clientes, temos todos os tipos de pratos Italianos e com uma exelente qualidade segundo as criticas. Pela nossa preocupação dedicimos abrir esse restaurante em um lugar confortável com uma boa vista e muitas decorações para que você possa ter a experiência de se sentir na Itália.</p>
                 <table>
            			 <tr>
                 		<td><img src=css/img/icon/Telefone.png></td>
@@ -100,7 +100,7 @@
                 
                 </div>
                 <div class=Contact>
-                <h2>Nos Contate</h2> 
+                <h2>Contate-nos</h2> 
               		<input class=CampoEmail type=email name=email placeholder=Email><br>
               		<textarea class=CampoTexto placeholder=Mensagem></textarea><br>
               		<input class=BotaoEnviar type=submit value=Enviar>

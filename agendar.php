@@ -89,9 +89,9 @@ require('php/calendarphp/getvar.php');
           <ul id="header-container">
              
              <li><a href="home.php"><h1>Home</h1></a></li>
-             <li><a href="sobre.php"><h1>Sobre</h1></a></li>
-             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
+             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
+             <li><a href="sobre.php"><h1>Sobre</h1></a></li>
              
              <div class="login">
              
@@ -329,7 +329,7 @@ require('php/calendarphp/getvar.php');
                </div>
                <div id="mesaSelecionada-panel"> <!-- Mesa Selecionada PANEL -->
                   <h3>Mesa selecionada</h3>
-                  <input id="mesaSelecionada" name="IdMesa" readonly="readonly" value="Nenhuma mesa selecionada"/>
+                  <input id="mesaSelecionada" name="IdMesa" readonly="readonly" value="Escolha uma de nossas mesas"/>
                </div>
                <div id="confirmarReserva-panel"> <!-- Confirmação da Reserva -->
                   <button type="submit">Confirmar Reserva</button>

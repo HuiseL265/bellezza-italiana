@@ -37,9 +37,9 @@ session_start();
 
           <ul id="header-container" style="width:100%;display:flex;justify-content:space-between;">
              <li><a href="home.php"><h1>Home</h1></a></li>
-             <li><a href="Sobre.php"><h1>Sobre</h1></a></li>
-             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
              <li><a href="agendar.php"><h1>Agende seu horário</h1></a></li>
+             <li><a href="cardapio.php"><h1>Cardápio</h1></a></li>
+             <li><a href="Sobre.php"><h1>Sobre</h1></a></li>
 
               <!--logado-->
               <div id="usuario">
@@ -98,7 +98,7 @@ session_start();
       <img src="css/img/background/Menu_Sobre.jpg" title="sobre" height="35%" width="100%">
       	</div>
       <div class="PrimeiroTexto">
-      	<p><i>Iniciamos nossos restaurantes no ano de 2000 no Brasil, inicialmente o restaurante se chamava "Local Pasta", onde vendíamos uma grande variedade de pizzas, por um valor a baixo da concorrência por ter uma parceria com uma empresa Italiana chamada de “Macarrone”. Anos depois começamos a crescer e por isso nos acrescentamos todos os tipos de comidas italianas no cardápio para saciar o apetite de nossos clientes e com isso mudamos nosso nome para “Taliatelle Italiane” para combinar mais com o nosso restaurante.</i></p>  
+      	<p><i>Inauguramos nosso restaurante nos anos 2000 no Brasil, inicialmente o restaurante se chamava "Local Pasta", onde vendíamos uma grande variedade de pizzas, por um valor a baixo da concorrência por ter uma parceria com uma empresa Italiana chamada de “Macarrone”. Anos depois começamos a crescer e por isso acrescentamos todos os tipos de comidas italianas no cardápio para saciar o apetite de nossos clientes e com isso mudamos nosso nome para “Belezza Italiana” para combinar mais com o nosso restaurante.</i></p>  
       	<p id="Visite"><i>Visite-nos e encante-se!</i></p>
       </div>
       <div class="LinhaDoTempo">
