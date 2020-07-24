@@ -23,6 +23,7 @@ require('php/calendarphp/getvar.php');
 
          $(document).ready(function() {
             $('.table-mesas').hide();
+            $('.square, .square+p').hide();
             $('#confirmarReserva-panel button').hide();
             $('#mesaSelecionada-panel h3').hide();
             $('#mesaSelecionada-panel input').hide();
@@ -283,11 +284,11 @@ require('php/calendarphp/getvar.php');
 
                <!--<div id="legendaTitle">Legendas</div>-->
                <div>
-                  <div id="square" class="mesaDisponivel"></div>
+                  <div class="square" style="background-color:#69e584"></div>
                   <p>Disponivel</p>
                </div>
                <div>
-                  <div id="square" style="background-color:#bb5a5a"></div>
+                  <div class="square" style="background-color:#bb5a5a"></div>
                   <p>Ocupado</p>
                </div>
                <div id="Data">

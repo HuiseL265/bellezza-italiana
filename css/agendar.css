@@ -80,7 +80,7 @@ body{
         color:#353434;
     }
 
-#container-menu .mesaDisponivel, #menu-aux .mesaDisponivel{
+#container-menu .mesaDisponivel{
     text-align:center;
     background-color:#69e584;
 }
@@ -197,7 +197,7 @@ body{
                 box-shadow:0px 0px 5px rgb(30, 139, 30);
             }
     
-#square{
+.square{
     width:50px;
     height:50px;
     border:1px solid white;
