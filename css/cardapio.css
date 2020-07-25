@@ -56,6 +56,13 @@ body{
     
 }
 
+#header-container li:nth-child(3) h1{
+    height: 75px;
+    line-height: 75px;
+    background-color: #00000021;
+    color: white;
+}
+
 #header-container li a h1:hover{
     color:white;
 }

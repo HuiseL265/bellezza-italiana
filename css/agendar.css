@@ -37,6 +37,13 @@ body{
     width:100%;
 }
 
+#header-container li:nth-child(2) h1{
+    height: 75px;
+    line-height: 75px;
+    background-color: #00000021;
+    color: white;
+}
+
 /* css do menu */
 
 #container-menu form, #menu-aux form{

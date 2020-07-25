@@ -5,6 +5,8 @@ session_start();
 <html lang="pt-br">
    <head>
       <meta charset="UTF-8">
+      <title>Sobre</title>
+
 	  <link rel="stylesheet" href="css/sobre.css">
 	  <link rel="shortcut icon" type="image/png" href="css/img/logo/logoRest.png">
       <link rel="stylesheet" href="css/header.css">
