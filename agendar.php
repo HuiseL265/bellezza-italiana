@@ -19,6 +19,7 @@ require('php/calendarphp/getvar.php');
       <script type="text/javascript" src="libs/verificarCadastro.js"></script>
 
       <script src="libs/jquery-3.4.1.js"></script>
+      <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 
       <script>
 
          $(document).ready(function() {
@@ -75,10 +76,8 @@ require('php/calendarphp/getvar.php');
             });
 
             function escolherMesa(numMesa){
-               if(hora != "none"){
                   $("#mesaSelecionada").val(numMesa);
-                  $('#confirmarReserva-panel button').fadeIn('300');
-               }               
+                  $('#confirmarReserva-panel button').fadeIn('300');              
             }
 
       </script>

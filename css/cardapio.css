@@ -347,6 +347,7 @@ label img{
     .descricaoPrato::-webkit-scrollbar-thumb {
         background: rgba(216, 13, 29, 0.7) !important;
         border-radius:5px  !important;
+        pointer-events: none;
         }
     
         .descricaoPrato::-webkit-scrollbar-thumb:active {

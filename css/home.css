@@ -127,6 +127,7 @@ body{
     image-rendering: pixelated;
     background-repeat: no-repeat;
     background-size:100%;
+    box-shadow:0px 4px 16px rgba(26, 26, 26, 0.3);
 }
 
 #info{
@@ -257,9 +258,10 @@ a{
 
 
 #rodape{
+    margin-top:20px;
     width: 100%;
     height: 560px;
-    background-color: #E58169;
+    background-color: transparent;
     text-align: center;
     align-items: center;
     color: rgba(66, 51, 51,0.9);
@@ -267,16 +269,15 @@ a{
 
 #mapa{
     position: relative;
-    width: 400px;
+    width: 500px;
     height: 200px;
     top: 0;
     left: 50%;
-    margin-left: -250px;
+    margin-left: -400px;
 }
 
 #endereco{
-
-    width: 500px;
+    width: 800px;
     height: 70px;
     background-color:rgba(66, 51, 51,0.9);
     border-radius: 5px;
@@ -285,7 +286,7 @@ a{
 
 #endereco button{
     position: relative;
-    right:-80%;
+    right:-170%;
     color:black;
     background: #33df7a;
 

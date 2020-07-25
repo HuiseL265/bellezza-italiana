@@ -15,6 +15,8 @@ var y="";
 var m="";
 var d="";
 
+var anterior = ""; //for function day
+
 
 function daysInMonth(month,year) {
     return new Date(year, month, 0).getDate();
@@ -60,11 +62,36 @@ $(".back").click(function(){
 	}
 });
 
-	var anterior = "";
-
 $(".day").click(function(){
 
 	var Sday=$(this).attr('id');
+	dataVerif = Sday.replace('/', '-');
+	dataVerif = dataVerif.replace('/', '-');
+	dataAtual = $.datepicker.formatDate('yy-mm-dd', new Date());
+
+	dataVerif = dataVerif.split('-');
+	dataAtual = dataAtual.split('-');
+
+	
+
+	//verificação do ano selecionado
+	if(dataVerif[0] >= dataAtual[0]){
+		//verificação do mês selecionado
+		if(dataVerif[1] >= dataAtual[1]){
+			//verificação do dia selecionado
+			if(Number(dataVerif[2]) >= Number(dataAtual[2])){
+			}else{
+				alert("Dia selecionado não pode ser antes que o dia atual");
+				return;
+			}
+		}else{
+			alert("Mês selecionado não pode ser antes que o mês atual");
+			return;
+		}
+	}else{
+		alert("Ano selecionado não pode ser antes que o ano atual");
+		return;
+	}
 
 	$('#dataforphp').val(Sday);
 
@@ -86,8 +113,6 @@ $(".day").click(function(){
 	y=(Sday.split('/'))[0];
 	m=(Sday.split('/'))[1];
 	d=(Sday.split('/'))[2];
-
-	//alert("ano: "+y+" mês: "+m+" dia: "+d);
 
 	$.ajax({
 		url:"./php/calendarphp/verificarHorarios.php?ano="+y+"&&mes="+m+"&&dia="+d,
@@ -124,42 +149,23 @@ $("#selectHora").change(function (){
 	$('.square, .square+p').show(1000);
 
 	haMesasOcupadas = 0;
-	hora = $('#selectHora').val();
+	horaSelecionada = $('#selectHora').val();
 
-	if(hora != ""){
-
+	if(horaSelecionada != "none"){
 		$.ajax({
-			url:"./php/calendarphp/verificarHorarios.php?ano="+y+"&&mes="+m+"&&dia="+d,
-			success:function(horaDis){
-				if(horaDis != ""){
+			url:"./php/calendarphp/verificarMesas.php?hora="+horaSelecionada+"&&data="+y+"-"+m+"-"+d,
+			success:function(mesasOcupadas){
+				if(mesasOcupadas != ""){
+					$('.mesaOcupada').removeClass('mesaOcupada').addClass('btn-mesa');
 	
-					var horarios = horaDis.split('.')[0];
-					var mesas = horaDis.split('.')[1];
+					var mesas = mesasOcupadas.split(',');
 	
-					mesas = (mesas.split('/'));
-					horarios = (horarios.split('/'));
+					for(j=0; j < mesas.length; j++){
+						$('#Mesa'+mesas[j]).removeClass('btn-mesa').addClass('mesaOcupada');
+					}					
 
-					//alert(mesas.length);
-					//alert(horarios.length);
-	
-					if(horarios.length == mesas.length){
-						for(i = 0; i < horarios.length; i++){
-							
-							if(horarios[i] == hora && mesas[i] != "vazia"){
-								haMesasOcupadas = 1;
-								mesasOcupadas = (mesas[i].split(','));
-	
-								for(j=0; j < mesasOcupadas.length; j++){
-									$('#Mesa'+mesasOcupadas[j]).removeClass('btn-mesa').addClass('mesaOcupada');
-								}
-							}
-						}
-						if(haMesasOcupadas == 0){
-							$('.mesaOcupada').removeClass('mesaOcupada').addClass('btn-mesa');
-						}
-					}else{
-						console.log("quantidade length de mesas e horarios não está correto");
-					}
+				}else{
+					$('.mesaOcupada').removeClass('mesaOcupada').addClass('btn-mesa');
 				}
 			}
 		});
@@ -169,15 +175,11 @@ $("#selectHora").change(function (){
 
 
 	//reseta os valores e esconde o botão confirmar
-	$('#confirmarReserva-panel button').fadeOut('300');
+	$('#confirmarReserva-panel button').fadeOut('300');	
 	$("#mesaSelecionada").val("Escolha uma de nossas mesas");
 
 	//toggle da mesa escolhida
-	if(hora != "vazia"){
-	   $('#mesaSelecionada-panel h3, #mesaSelecionada-panel input').show('300');
-	}else{
-	   $('#mesaSelecionada-panel h3, #mesaSelecionada-panel input').hide('300');
-	}
+	$('#mesaSelecionada-panel h3, #mesaSelecionada-panel input').show('300');
 
 
  });
